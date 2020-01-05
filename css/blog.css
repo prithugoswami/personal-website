@@ -1,0 +1,101 @@
+.bcontainer{
+    margin-top: 40px;
+    display: flex;
+    flex-flow: row 
+}
+
+.blog-menu{
+    /* background-color: pink; */
+    border-right: 1px solid #BCBCBC; 
+    margin-left: 30px;
+    min-width: 170px;
+    max-width: 220px;
+}
+
+.blog-menu ul{
+    list-style: none;
+}
+
+.blog-menu > ul > li{
+    font-weight: 700;
+    line-height: 2.5;
+} 
+.blog-menu > ul > ul > li{
+    text-indent: 1.5rem;
+    line-height: 1.4;
+    font-weight: 200;
+}
+
+.bcontent{
+    /* background-color: lightgreen; */
+    padding-left: 30px;
+    margin-right: 200px;
+    flex-grow: 1;
+}
+.bcontent h1{
+    font-size: 36px;
+}
+
+ul.posts{
+    list-style: none;
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 35px;
+    min-width: 500px;
+}
+
+ul.posts > li:nth-child(odd){
+    background-color: #E5E5E5;
+}
+.date{
+    border-bottom: 2px solid #BCBCBC;
+    padding-bottom: 5px
+}
+
+.post-text{
+    margin-top: 20px;
+    font-family: Roboto, Sans-serif;
+    font-size: 18px;
+}
+
+.post-text p{
+    padding-bottom: 15px;
+    line-height: 1.4;
+}
+.post-text h1{
+    font-size:1.7rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.post-text h2{
+    font-size:1.5rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.post-text h3{
+    font-size:1.3rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.post-text ul{
+    list-style-position: inside;
+}
+
+.post-text > ul > ul{
+    text-indent: 2.5rem;
+}
+
+.post-text > ul{
+    text-indent: 1rem;
+}
+
+.post-text > ul > ul{
+    text-indent: 2.5rem;
+}
+
+.post-text > ul > ul > ul{
+    text-indent: 4.5rem;
+}
