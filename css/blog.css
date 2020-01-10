@@ -34,23 +34,22 @@
     width: 60%;
 }
 .bcontent h1{
-    font-size: 36px;
+    font-size: 2.3rem;
 }
 
 .post-labels{
     display:flex;
-    width: 50%;
+    flex-wrap: wrap;
+    max-width: 50%;
+    margin-left: -0.4rem;
 }
 
 .post-label{
-    background-color: #aaaaaa;
+    background-color: #bbb;
     border-radius: 0.4rem;
     padding: 0.2rem 1rem;
     font-size: 0.8rem;
-}
-
-.post-label:not(:first-child){
-    margin-left: 0.8rem;
+    margin: 0.2rem 0.4rem;
 }
 
 ul.posts{
@@ -71,7 +70,7 @@ ul.posts > li:nth-child(odd){
 .post-text{
     margin-top: 20px;
     font-family: Roboto, Sans-serif;
-    font-size: 18px;
+    font-size: 1.2rem;
 }
 
 .post-text p{
