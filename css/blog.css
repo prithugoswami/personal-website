@@ -37,6 +37,22 @@
     font-size: 36px;
 }
 
+.post-labels{
+    display:flex;
+    width: 50%;
+}
+
+.post-label{
+    background-color: #aaaaaa;
+    border-radius: 0.4rem;
+    padding: 0.2rem 1rem;
+    font-size: 0.8rem;
+}
+
+.post-label:not(:first-child){
+    margin-left: 0.8rem;
+}
+
 ul.posts{
     list-style: none;
     margin-top: 10px;
@@ -48,8 +64,7 @@ ul.posts{
 ul.posts > li:nth-child(odd){
     background-color: #E5E5E5;
 }
-.date{
-    border-bottom: 2px solid #BCBCBC;
+.post-date{
     padding-bottom: 5px
 }
 
