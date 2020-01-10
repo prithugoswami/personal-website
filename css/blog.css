@@ -45,14 +45,14 @@
 }
 
 .post-label{
-    background-color: #bbb;
+    background-color: #ccc;
     border-radius: 0.4rem;
     padding: 0.2rem 1rem;
     font-size: 0.8rem;
     margin: 0.2rem 0.4rem;
 }
 
-ul.posts{
+.posts{
     list-style: none;
     margin-top: 10px;
     font-size: 18px;
@@ -60,11 +60,18 @@ ul.posts{
     min-width: 500px;
 }
 
-ul.posts > li:nth-child(odd){
+.posts > div:nth-child(odd){
     background-color: #E5E5E5;
 }
-.post-date{
-    padding-bottom: 5px
+
+.post-item{
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-item > .post-date{
+    padding: 0 1rem;
+    font-size: 1rem;
 }
 
 .post-text{
