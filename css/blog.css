@@ -1,7 +1,9 @@
 .bcontainer{
     margin-top: 40px;
     display: flex;
-    flex-flow: row 
+    flex-flow: row;
+    width: 100%;
+    justify-content: center;
 }
 
 .blog-menu{
@@ -29,8 +31,7 @@
 .bcontent{
     /* background-color: lightgreen; */
     padding-left: 30px;
-    margin-right: 200px;
-    flex-grow: 1;
+    width: 60%;
 }
 .bcontent h1{
     font-size: 36px;
