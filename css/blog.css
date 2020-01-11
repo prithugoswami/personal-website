@@ -30,7 +30,6 @@
 
 .bcontent{
     /* background-color: lightgreen; */
-    padding-left: 30px;
     width: 60%;
 }
 .bcontent h1{
@@ -79,43 +78,36 @@
 }
 
 .post-text{
-    margin-top: 20px;
     font-family: Roboto, Sans-serif;
     font-size: 1.2rem;
 }
 
 .post-text p{
-    padding-bottom: 15px;
     line-height: 1.4;
 }
 .post-text h1{
     font-size:1.7rem;
     font-weight: 500;
-    margin-bottom: 10px;
 }
 
 .post-text h2{
     font-size:1.5rem;
     font-weight: 500;
-    margin-bottom: 10px;
+    margin: 0.5rem 0;
 }
 
 .post-text h3{
     font-size:1.3rem;
     font-weight: 500;
-    margin-bottom: 10px;
 }
 
 .post-text ul{
-    list-style-position: inside;
+    list-style-position: outside;
+    padding: 0 1.2rem;
 }
 
 .post-text > ul > ul{
     text-indent: 2.5rem;
-}
-
-.post-text > ul{
-    text-indent: 1rem;
 }
 
 .post-text > ul > ul{
@@ -124,4 +116,17 @@
 
 .post-text > ul > ul > ul{
     text-indent: 4.5rem;
+}
+
+.post-text > pre {
+    max-width: 100%;
+    background: #ddd;
+    padding: 1rem;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    overflow: auto;
+}
+
+.post-text img{
+    max-width: 90%;
 }
