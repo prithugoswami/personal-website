@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <title>Prithu Goswami</title>
+  <meta name="description" content="Prithu Goswami's personal website">
+  <meta name="author" content="Prithu Goswami">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/blog.css">
+  <link rel="icon" type="img/png" href="/img/favicon.png">
+
+</head>
+
+<body>
+  <p class="wip">WIP</p>
+  <nav>
+    <ul>
+      <li><a href="/">About me</a></li>
+      <li><a href="/projects">Projects</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/links">Links</a></li>
+    </ul>
+  </nav>
+
+  <div class="bcontainer">
+    <div class="bcontent">
+      <h1>Post title goes here </h1>
+      <p class="post-date">Januaray 19, 2019</p>
+      <div class="post-labels">
+        <div class=post-label>Linux</div>
+        <div class=post-label>Tag1</div>
+        <div class=post-label>Tag2</div>
+        <div class=post-label>Tag3</div>
+        <div class=post-label>Tag4</div>
+        <div class=post-label>InfoSec</div>
+        <div class=post-label>A really long tag name</div>
+      </div>
+      <div class="post-text">
+      <h1 id="this-is-an-example-post">This is an example post</h1>
+<p>When ever you think of static site generators, you think about something like - Gatsby, Hugo, Jekyll, etc. But I think all these are overkill. I won’t even use majority of the features they provide for my simple blog. So the best thing to do is to build something for yourself. This can be done with simple bash scripts with the help of <code>pandoc</code></p>
+<h2 id="example">Example</h2>
+<pre class="python"><code>import tmdbsimple as tmdb
+from imdbpie import Imdb
+from mutagen.mp4 import MP4, MP4Cover
+
+# The following subtitle codecs are ingored if found in the file as they are
+# not supported by the mp4 container. These are mainly picture-based subtitles
+sub_codec_blacklist = (&quot;dvdsub&quot;, &quot;dvd_subtitle&quot;, &quot;pgssub&quot;, &quot;hdmv_pgs_subtitle&quot;)
+
+def collect_stream_metadata(filename):
+    &quot;&quot;&quot;
+    Returns a list of streams&#39; metadata present in the media file passed as 
+    the argument (filename) 
+    &quot;&quot;&quot;
+    command = &#39;ffprobe -i &quot;{}&quot; -show_streams -of json&#39;.format(filename)
+    args = shlex.split(command)
+    p = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                         universal_newlines=True)
+    out, err = p.communicate()
+    
+    json_data = JSONDecoder().decode(out)
+    
+    return json_data</code></pre>
+<p>This is very simple code.</p>
+<ul>
+<li>I am going to pretend that I am explaing this piece of code in bullet points</li>
+<li>But let me tell you that you shouldn’t expect anything like that. I am just doing this so that I can see how bullet points look.</li>
+<li>I am going to make this third bullet point a little bigger, because why not? I am now going to add some gibberish as I can’t come up with something creative. asff kdjfh addf aitng hgjffg kfsdgye al;kjgj ghjadshnb gjhafg fgh fghf h3 g jbh dhandg hjafjg an</li>
+</ul>
+<h2 id="snippets">Snippets</h2>
+<p><strong>Using awk, tr, to get the remote info of a git repo</strong></p>
+<p>This will output the (fetch) remote of a git repository and put the contents into the clipboard</p>
+<pre><code>$ git remote -v | awk &#39;{print $2}&#39; | head -1 | tr -d &#39;\n&#39; | xsel -ib</code></pre>
+<h2 id="heres-an-image">Here’s an Image</h2>
+<p><img src="https://i.stack.imgur.com/cv2wX.png" /></p>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
