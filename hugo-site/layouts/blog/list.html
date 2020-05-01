@@ -25,7 +25,7 @@
       <div class="posts">
         {{ range .Pages }}
         <div class="post-item">
-          <a href="./post.html">{{ .Title }}</a>
+          <a href="{{ .URL }}">{{ .Title }}</a>
           <p class="post-date">{{ .Date.Format "2 Jan 2006" }}</p>
         </div>
         {{ end }}
