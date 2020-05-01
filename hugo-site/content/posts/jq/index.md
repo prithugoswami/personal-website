@@ -7,12 +7,12 @@ tags:
 - command line
 ---
 
-![Hell](./screen.png)
+![screenshot](./screen.png)
 
-It's the IPL season and I thought why not keep the track of the score of the
+It's the IPL season and I thought why not keep a track of the score of the
 matches that are in progress. I have two tests tomorrow and I don't want to be
 wasting time looking at the scores every now and then; instead let's spend some
-MORE time looking into a utility that I haven't used before and test and play
+*more* time looking into an utility that I haven't used before and test and play
 around with it. I don't even like cricket that much.
 
 The utility I am talking about here is `jq`. `jq` is a command-line JSON
