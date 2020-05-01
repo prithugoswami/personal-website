@@ -1,0 +1,120 @@
+.bcontainer{
+    margin-top: 40px;
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    justify-content: center;
+}
+
+.blog-menu{
+    /* background-color: pink; */
+    border-right: 1px solid #BCBCBC; 
+    margin-left: 30px;
+    min-width: 170px;
+    max-width: 220px;
+}
+
+.blog-menu ul{
+    list-style: none;
+}
+
+.blog-menu > ul > li{
+    font-weight: 700;
+    line-height: 2.5;
+} 
+.blog-menu > ul > ul > li{
+    text-indent: 1.5rem;
+    line-height: 1.4;
+    font-weight: 200;
+}
+
+.bcontent{
+    /* background-color: lightgreen; */
+    width: 60%;
+}
+.bcontent h1{
+    font-size: 2.3rem;
+}
+
+.bcontent > .post-date{
+    margin-bottom: 0.5rem;
+}
+
+.post-labels{
+    display:flex;
+    flex-wrap: wrap;
+    max-width: 50%;
+    margin-left: -0.4rem;
+}
+
+.post-label{
+    background-color: #ddd;
+    border-radius: 0.4rem;
+    padding: 0.2rem 1rem;
+    font-size: 0.8rem;
+    margin: 0.2rem 0.4rem;
+}
+
+.posts{
+    list-style: none;
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 35px;
+    min-width: 500px;
+}
+
+.posts > div:nth-child(odd){
+    background-color: #E5E5E5;
+}
+
+.post-item{
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-item > .post-date{
+    padding: 0 1rem;
+    font-size: 1rem;
+}
+
+.post-text{
+    font-family: Roboto, Sans-serif;
+    font-size: 1.2rem;
+}
+
+.post-text p{
+    line-height: 1.4;
+}
+.post-text h1{
+    font-size:1.7rem;
+    font-weight: 500;
+}
+
+.post-text h2{
+    font-size:1.5rem;
+    font-weight: 500;
+    margin: 0.5rem 0;
+}
+
+.post-text h3{
+    font-size:1.3rem;
+    font-weight: 500;
+}
+
+.post-text ul{
+    list-style-position: outside;
+    padding: 0 1.2rem;
+}
+
+.post-text > pre {
+    max-width: 100%;
+    background: #ddd;
+    padding: 1rem;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    overflow: auto;
+}
+
+.post-text img{
+    max-width: 90%;
+}
