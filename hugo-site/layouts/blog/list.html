@@ -23,30 +23,12 @@
     <div class="bcontent">
       <h1>Latest Posts</h1>
       <div class="posts">
+        {{ range .Pages }}
         <div class="post-item">
-          <a href="./post.html">Designing this blog from scratch</a>
-          <p class="post-date">10 Jan 2020</p>
+          <a href="./post.html">{{ .Title }}</a>
+          <p class="post-date">{{ .Date.Format "2 Jan 2006" }}</p>
         </div>
-        <div class="post-item">
-          <a href="./post.html">Using figma for quick prototype design</a>
-          <p class="post-date">19 Dec 2019</p>
-        </div>
-        <div class="post-item">
-          <a href="./post.html">Utilitarian design principles</a>
-          <p class="post-date">1 Dec 2019</p>
-        </div>
-        <div class="post-item">
-          <a href="./post.html">Learning x86 Assembly</a>
-          <p class="post-date">7 Nov 2019</p>
-        </div>
-        <div class="post-item">
-          <a href="./post.html">Learning from CTFs about IT security</a>
-          <p class="post-date">25 Oct 2019</p>
-        </div>
-        <div class="post-item">
-          <a href="./post.html">The web is cluttered</a>
-          <p class="post-date">1 Jul 2019</p>
-        </div>
+        {{ end }}
       </div>
     </div>
   </div>
