@@ -23,14 +23,14 @@ in from other programs into it. `jq` has a very straight forward man page.  It
 has a mini language of it's own which is quite intuitive.
 
 The command below fetches the information using cricbuzz. Turns out they have
-an undocumented api that is publicly usable. We get the score of the batting
+an undocumented API that is publicly usable. We get the score of the batting
 side and also the status of the match. ` tr -d \" | tr \n ' '` gets rid of
 double quotes and converts the newlines into spaces.
 
 
 {{< highlight bash >}}
 #!/usr/bin/bash
-$ curl -s https://www.cricbuzz.com/match-api/livematches.json\
+curl -s https://www.cricbuzz.com/match-api/livematches.json\
     | jq '.matches."22455"|.score.batting.score,.status'\
     | tr -d \" | tr '\n' ' '
 
