@@ -60,8 +60,10 @@ nav a{
     font-weight: 700;
     color: black;
 }
+
 #intro{
-    width: 900px;
+    width: 90%;
+    max-width: 900px;
     margin: 0 auto;
     position: relative;
     margin-top: 100px;
@@ -76,8 +78,7 @@ nav a{
 .shadow-box{
     background-color: white;
     border-radius: 24px;
-    width: 650px;
-    height: 411px;
+    width: 70%;
     box-shadow: 0 10px 30px 3px rgba(0,0,0,0.15);
     margin: 0 auto;
     position: relative;
@@ -135,9 +136,9 @@ nav a{
 }
 
 .intro-text{
-    padding: 80px 105px;
+    padding: 6rem;
     font-weight: 300;
-    font-size: 18px;
+    font-size: 1.1rem;
     text-align: justify;
 }
 
@@ -164,6 +165,7 @@ nav a{
     width: 74px;
     position: absolute;
     left: 100px;
+    bottom: -40px;
     filter: drop-shadow(0px -7px 7px rgba(0,0,0,0.15));
 }
 
@@ -181,15 +183,23 @@ nav a{
     left: 40px;
 }
 
+
 #socials{
     display: flex;
     position: absolute;
     right: -100px;
-    bottom: 40px;
+    bottom: 30px;
 }
 
 #socials a{
     margin-left: 10px
+}
+
+#socials-2{
+    display: none;
+    justify-content: space-between;
+    width: 80%;
+    margin: 6rem 0;
 }
 
 .sb{
@@ -224,3 +234,73 @@ nav a{
     color: rgba(0,0,0,0.2);
     text-shadow: none;
 }
+
+@media only screen and (max-width: 767px){
+    #intro{
+        width: 100%;
+        margin-top: 8rem;
+        display: flex;
+        flex-flow: column;
+        align-items: center ;
+    }
+
+    .head-text {
+        display: none;
+    }
+    
+    .shadow-box{
+        width: 90%;
+    }
+
+    #socials{
+        display: none;
+    }
+
+    #socials-2{
+        display: flex;
+    }
+
+    #profile-pic {
+        width: 120px;
+        border-radius: 50%;
+        position: absolute;
+        top: -60px;
+        left: calc(50% - 60px);
+        box-shadow: 0 7px 10px rgba(0,0,0,0.25);
+    }
+
+    .intro-text{
+        padding: 0 3rem;
+        padding-top: 5rem;
+        padding-bottom: 4rem;
+        font-weight: 300;
+        font-size: 1.1rem;
+        text-align: justify;
+    }
+
+    #triangle{
+        width: 80px;
+        right: -50px;
+    }
+
+    #circle {
+        width: 50px;
+        bottom: -25px;
+    }
+
+    #stripes-green{
+        width: 150px;
+        position: absolute;
+        top: -60px;
+        right: 0px;
+    }
+
+    #stripes-purp{
+        width: 140px;
+        position: absolute;
+        bottom: -65px;
+        left: -10px;
+    }
+
+}
+
