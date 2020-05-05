@@ -78,10 +78,10 @@ nav a{
 .shadow-box{
     background-color: white;
     border-radius: 24px;
-    width: 70%;
     box-shadow: 0 10px 30px 3px rgba(0,0,0,0.15);
     margin: 0 auto;
     position: relative;
+    max-width: 640px
 }
 
 .shadow-box-error{
@@ -199,7 +199,8 @@ nav a{
     display: none;
     justify-content: space-between;
     width: 80%;
-    margin: 6rem 0;
+    max-width: 380px;
+    margin-top: 6rem;
 }
 
 .sb{
@@ -235,6 +236,50 @@ nav a{
     text-shadow: none;
 }
 
+
+#projects{
+    display: flex;
+    flex-flow: column;
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+}
+
+#projects h1 {
+    transform: translate(-4rem, 1.2rem);
+    color: rgba(0,0,0,0.8);
+    font-size: 2.4rem;
+    z-index: 1;
+    text-shadow: 0 4px 7px rgba(0,0,0,0.2);
+}
+
+.project-text{
+    padding: 2rem 2rem;
+    padding-top: 3.5rem;
+}
+
+#projects h2 {
+    font-size: 1.4rem;
+    color: #B554E3;
+}
+
+#projects p{
+    margin-left: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    margin: none;
+    display: inline-block;
+    padding: 1rem 2rem;
+}
+
+#project-cta{
+    background: #B554E3;
+    color: white;
+    transform: translate(34rem, -2rem);
+    box-shadow: 0px 7px 7px rgba(0,0,0,0.15);
+}
+
 @media only screen and (max-width: 767px){
     #intro{
         width: 100%;
@@ -249,7 +294,7 @@ nav a{
     }
     
     .shadow-box{
-        width: 90%;
+        width: 85%;
     }
 
     #socials{
@@ -279,6 +324,7 @@ nav a{
     }
 
     #triangle{
+        display: none;
         width: 80px;
         right: -50px;
     }
@@ -288,19 +334,48 @@ nav a{
         bottom: -25px;
     }
 
-    #stripes-green{
+    #stripes-green {
         width: 150px;
         position: absolute;
         top: -60px;
         right: 0px;
     }
 
-    #stripes-purp{
+    #stripes-purp {
         width: 140px;
         position: absolute;
         bottom: -65px;
         left: -10px;
     }
 
-}
+    #projects {
+        display: flex;
+        flex-flow: column;
+        margin-top: 5rem;
+        align-items: center;
+        margin-bottom: 5rem;
+    }
 
+    #projects h2 {
+        font-size: 1.4rem;
+        color: #B554E3;
+    }
+
+    #projects h1 {
+        transform: none;
+        font-size: 2rem;
+        margin-bottom: 0.4rem;
+        text-align: center;
+    }
+
+    #project-cta{
+        background: #B554E3;
+        color: white;
+        box-shadow: 0px 7px 7px rgba(0,0,0,0.15);
+        transform: none;
+        position: relative;
+        left: calc(70% - 70px);
+        top: 1.5rem;
+    }
+
+}
