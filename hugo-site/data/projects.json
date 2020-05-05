@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Auto Movie Tagger",
+    "url": "https://github.com/prithugoswami/auto-movie-tagger",
+    "description": "A small python script that auto tags movie files. It fetches movie information and poster from imdb and tmdb."
+  },
+  {
+    "title": "moviedb",
+    "url": "https://project-moviedb.herokuapp.com",
+    "description": "A simple web app written using python flask framework. A user can search for movies and also add them to their favorites list."
+  },
+  {
+    "title": "dotfiles",
+    "url": "https://github.com/prithugoswami/dotfiles",
+    "description": "These are just my linux config files that I use on my Arch Linux machine."
+  }
+]
