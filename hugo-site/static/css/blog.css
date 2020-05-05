@@ -1,0 +1,146 @@
+.bcontainer{
+    margin-top: 40px;
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    justify-content: center;
+}
+
+.blog-menu{
+    /* background-color: pink; */
+    border-right: 1px solid #BCBCBC; 
+    margin-left: 30px;
+    min-width: 170px;
+    max-width: 220px;
+}
+
+.blog-menu ul{
+    list-style: none;
+}
+
+.blog-menu > ul > li{
+    font-weight: 700;
+    line-height: 2.5;
+} 
+.blog-menu > ul > ul > li{
+    text-indent: 1.5rem;
+    line-height: 1.4;
+    font-weight: 200;
+}
+
+.bcontent{
+    /* background-color: lightgreen; */
+    width: 70%;
+}
+.bcontent h1{
+    font-size: 2.3rem;
+    line-height: 1.2;
+}
+
+.bcontent > .post-date{
+    margin: 0.8rem 0;
+    font-family: Sans-Serif;
+}
+
+.post-labels{
+    display:flex;
+    flex-wrap: wrap;
+    margin-left: -0.4rem;
+    margin-bottom: 2rem;
+}
+
+.post-label{
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 0.4rem;
+    padding: 0.2rem 1rem;
+    font-size: 0.8rem;
+    margin: 0.2rem 0.4rem;
+}
+
+.posts{
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.posts > div:nth-child(odd){
+    background-color: #E5E5E5;
+}
+
+.post-item{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0.5rem;
+}
+
+.post-item > a {
+    line-height: 1.4;
+    max-width: 70%;
+    margin-right: 1rem;
+}
+
+.post-item > .post-date{
+    font-size: 1rem;
+    line-height: 1.4;
+    min-width: 30%;
+    text-align: right;
+}
+
+.post-text{
+    font-family: Roboto, Sans-serif;
+    font-size: 1.2rem;
+}
+
+.post-text p{
+    line-height: 1.4;
+}
+.post-text h1{
+    font-size:1.7rem;
+    font-weight: 700;
+    margin-top: 1rem;
+}
+
+.post-text h2{
+    font-size:1.5rem;
+    font-weight: 700;
+    margin-top: 1rem;
+}
+
+.post-text h3{
+    font-size:1.3rem;
+    font-weight: 700;
+    margin-top: 1rem;
+}
+
+.post-text ul{
+    list-style-position: outside;
+    padding: 0 1.2rem;
+}
+
+.post-text pre {
+    max-width: 100%;
+    background: #ddd;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.post-text img{
+    margin: 0 auto;
+    width: 90%;
+}
+
+.post-text > p > code{
+    font-family: 'Roboto Mono';
+    font-size: 90%;
+    background: rgba(0, 0, 0, 0.15);
+    padding: 0 0.4rem;
+    border-radius: 0.2rem;
+}
+
+@media only screen and (max-width: 767px){
+    .bcontent {
+        width: 95%;
+    }
+}

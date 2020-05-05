@@ -1,0 +1,306 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a,
+a:active,
+a:focus{
+    outline: none;
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color: #B554E3;
+}
+
+html{
+    font-family: "Roboto Mono",sans-serif;
+}
+
+body{
+    background-color: #f3f3f3;
+}
+
+nav {
+    background-color: white;
+    height: 64px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.wip{
+    background-color: rgba(255,224,0,1);
+    font-size: 20px;
+    text-align: center;
+
+}
+
+nav ul{
+    list-style: none;
+    padding-left: 30px;
+}
+
+nav li{
+    display: inline;
+}
+
+nav li:not(:last-child){
+    padding-right: 40px;
+}
+
+nav a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: black;
+}
+
+#intro{
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 100px;
+}
+
+.container{
+    width: auto;
+    margin: 0 auto;
+    position: relative;
+}
+
+.shadow-box{
+    background-color: white;
+    border-radius: 24px;
+    width: 70%;
+    box-shadow: 0 10px 30px 3px rgba(0,0,0,0.15);
+    margin: 0 auto;
+    position: relative;
+}
+
+.shadow-box-error{
+    background-color: white;
+    border-radius: 24px;
+    width: 516px;
+    height: 239px;
+    box-shadow: 0 10px 30px 3px rgba(0,0,0,0.15);
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:150px;
+}
+
+.error{
+    font-weight: 700px;
+    font-size: 120px;
+    color: #BCBCBC;
+}
+
+
+.head-text {
+    position: absolute;
+    top: -40px;
+    right: -130px;
+    color: #414141;
+    line-height: 1;
+}
+
+.sub-head{
+    font-weight:700;
+    font-size: 48px;
+    position: absolute;
+    top: -35px;
+    left: -50px;
+    color: #242424;
+    text-shadow: 0 4px 7px rgba(0,0,0,0.2);
+}
+
+.head-text h1{
+    font-size: 64px;
+    font-weight: 700;
+    text-shadow: 0 4px 7px rgba(0,0,0,0.2);
+}
+
+.head-text h2{
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 3px;
+}
+
+.intro-text{
+    padding: 6rem;
+    font-weight: 300;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+#profile-pic {
+    width: 190px;
+    border-radius: 50%;
+    position: absolute;
+    top: 40px;
+    left: -130px;
+    box-shadow: 0 7px 10px rgba(0,0,0,0.25);
+}
+
+#triangle {
+    fill: #B554E3;
+    width: 128px;
+    position: absolute;
+    right: -80px;
+    bottom: 200px;
+    filter: drop-shadow(0px 7px 7px rgba(0,0,0,0.15));
+}
+
+#circle {
+    fill:#8BEF89;
+    width: 74px;
+    position: absolute;
+    left: 100px;
+    bottom: -40px;
+    filter: drop-shadow(0px -7px 7px rgba(0,0,0,0.15));
+}
+
+#stripes-green{
+    width: 237px;
+    position: absolute;
+    top: -60px;
+    right: 0px;
+}
+
+#stripes-purp{
+    width: 204px;
+    position: absolute;
+    bottom: -75px;
+    left: 40px;
+}
+
+
+#socials{
+    display: flex;
+    position: absolute;
+    right: -100px;
+    bottom: 30px;
+}
+
+#socials a{
+    margin-left: 10px
+}
+
+#socials-2{
+    display: none;
+    justify-content: space-between;
+    width: 80%;
+    margin: 6rem 0;
+}
+
+.sb{
+    padding: 15px;
+    display: flex;
+    box-shadow: 0px 7px 7px rgba(0,0,0,0.15);
+}
+
+.sb img{
+    width: 30px;
+    height: 30px;
+}
+
+.mail{
+    background: #4ED44C ;
+}
+
+.github{
+    background: #333
+}
+
+.dribbble{
+    background: #ea4c89 
+}
+
+.twitter{
+    background: #1da1f2 
+}
+
+.joke {
+    font-size: 10px;
+    color: rgba(0,0,0,0.2);
+    text-shadow: none;
+}
+
+@media only screen and (max-width: 767px){
+    #intro{
+        width: 100%;
+        margin-top: 8rem;
+        display: flex;
+        flex-flow: column;
+        align-items: center ;
+    }
+
+    .head-text {
+        display: none;
+    }
+    
+    .shadow-box{
+        width: 90%;
+    }
+
+    #socials{
+        display: none;
+    }
+
+    #socials-2{
+        display: flex;
+    }
+
+    #profile-pic {
+        width: 120px;
+        border-radius: 50%;
+        position: absolute;
+        top: -60px;
+        left: calc(50% - 60px);
+        box-shadow: 0 7px 10px rgba(0,0,0,0.25);
+    }
+
+    .intro-text{
+        padding: 0 3rem;
+        padding-top: 5rem;
+        padding-bottom: 4rem;
+        font-weight: 300;
+        font-size: 1.1rem;
+        text-align: justify;
+    }
+
+    #triangle{
+        width: 80px;
+        right: -50px;
+    }
+
+    #circle {
+        width: 50px;
+        bottom: -25px;
+    }
+
+    #stripes-green{
+        width: 150px;
+        position: absolute;
+        top: -60px;
+        right: 0px;
+    }
+
+    #stripes-purp{
+        width: 140px;
+        position: absolute;
+        bottom: -65px;
+        left: -10px;
+    }
+
+}
+

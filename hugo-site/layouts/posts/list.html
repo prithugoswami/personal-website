@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <title>Prithu Goswami</title>
+  <meta name="description" content="Prithu Goswami's personal website">
+  <meta name="author" content="Prithu Goswami">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/blog.css">
+  <link rel="icon" type="img/png" href="/img/favicon.png">
+
+</head>
+
+<body>
+  <p class="wip">WIP</p>
+  {{ partial "nav.html" }}
+
+  <div class="bcontainer">
+    <div class="bcontent">
+      <h1>Latest Posts</h1>
+      <div class="posts">
+        {{ range .Pages }}
+        <div class="post-item">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <p class="post-date">{{ .Date.Format "2 Jan 2006" }}</p>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
