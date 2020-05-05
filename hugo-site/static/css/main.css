@@ -267,6 +267,16 @@ nav a{
     margin-bottom: 1rem;
 }
 
+.project-item:hover {
+    background-color: #f0f0f0;
+    border-radius: 0.4rem;
+    padding: 0.2rem 0;
+}
+.project-item {
+    border-radius: 0.4rem;
+    padding: 0.2rem 0;
+}
+
 .btn {
     margin: none;
     display: inline-block;
