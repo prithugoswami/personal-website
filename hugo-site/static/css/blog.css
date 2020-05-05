@@ -30,25 +30,27 @@
 
 .bcontent{
     /* background-color: lightgreen; */
-    width: 60%;
+    width: 70%;
 }
 .bcontent h1{
     font-size: 2.3rem;
+    line-height: 1.2;
 }
 
 .bcontent > .post-date{
-    margin-bottom: 0.5rem;
+    margin: 0.8rem 0;
+    font-family: Sans-Serif;
 }
 
 .post-labels{
     display:flex;
     flex-wrap: wrap;
-    max-width: 50%;
     margin-left: -0.4rem;
+    margin-bottom: 2rem;
 }
 
 .post-label{
-    background-color: #ddd;
+    background-color: rgba(0, 0, 0, 0.15);
     border-radius: 0.4rem;
     padding: 0.2rem 1rem;
     font-size: 0.8rem;
@@ -87,18 +89,20 @@
 }
 .post-text h1{
     font-size:1.7rem;
-    font-weight: 500;
+    font-weight: 700;
+    margin-top: 1rem;
 }
 
 .post-text h2{
     font-size:1.5rem;
-    font-weight: 500;
-    margin: 0.5rem 0;
+    font-weight: 700;
+    margin-top: 1rem;
 }
 
 .post-text h3{
     font-size:1.3rem;
-    font-weight: 500;
+    font-weight: 700;
+    margin-top: 1rem;
 }
 
 .post-text ul{
@@ -106,15 +110,31 @@
     padding: 0 1.2rem;
 }
 
-.post-text > pre {
+.post-text pre {
     max-width: 100%;
     background: #ddd;
     padding: 1rem;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
     font-size: 0.9rem;
-    overflow: auto;
+    overflow-y: hidden;
+    overflow-x: scroll;
 }
 
 .post-text img{
-    max-width: 90%;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.post-text > p > code{
+    font-family: 'Roboto Mono';
+    font-size: 90%;
+    background: rgba(0, 0, 0, 0.15);
+    padding: 0 0.4rem;
+    border-radius: 0.2rem;
+}
+
+@media only screen and (max-width: 767px){
+    .bcontent {
+        width: 95%;
+    }
 }
