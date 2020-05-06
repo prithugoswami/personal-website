@@ -123,6 +123,29 @@
     </div>
   </section>
 
+  <section id=projects>
+    <div class=container>
+      <h1>I also write about stuff</h1>
+      <div class="shadow-box">
+        <div class="project-text">
+          {{ range sort (where .Site.RegularPages "Section" "posts") "Date" }}
+            <div class="project-item">
+              <h2>- {{ .Title }}</h2>
+              <p>{{ .Kind }}, {{ .Section }}<p>
+            </div>
+          {{ end }}
+        </div>
+        <!-- <div class=btn id=project-cta>View All</div> -->
+      </div>
+    </div>
+  </section>
+
+  <section id=write>
+    <div class=container>
+
+    </div>
+  </section>
+
 </body>
 </html>
 
