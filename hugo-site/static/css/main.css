@@ -257,14 +257,33 @@ nav a{
     margin-bottom: 5rem;
 }
 
-#projects h1 {
+.page-section{
+    display: flex;
+    flex-flow: column;
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+}
+
+#writeups a:hover{
+    color: #4ED44C
+}
+
+.page-section h1 {
     position: absolute;
-    top: -1.8rem;
-    left: -5rem;
-    z-index: 1;
     color: rgba(0,0,0,0.8);
     font-size: 2.4rem;
     text-shadow: 0 4px 7px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+#projects h1 {
+    top: -1.8rem;
+    left: -5rem;
+}
+
+#writeups h1 {
+    top: -1.8rem;
+    right: -7rem;
 }
 
 .project-text{
@@ -272,12 +291,19 @@ nav a{
     padding-top: 3.5rem;
 }
 
-#projects h2 {
+.page-section h2 {
     font-size: 1.4rem;
+}
+
+#projects h2 {
     color: #B554E3;
 }
 
-#projects p{
+#writeups h2 {
+    color: #4ED44C;
+}
+
+.page-section p{
     margin-left: 1.6rem;
     margin-bottom: 1rem;
 }
