@@ -1,7 +1,7 @@
 ---
 title: "Using jq to display cricket scores on i3bar"
 date: 1554643152
-description: "jq is a command line utility that parses JSON data and gives you the ability to access it using a simple syntax"
+description: "jq is a command line utility that parses JSON data and gives you the ability to access it using a simple syntax."
 tags:
 - i3
 - unix utilities
