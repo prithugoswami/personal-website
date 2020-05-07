@@ -398,20 +398,20 @@ nav a{
         width: 140px;
         position: absolute;
         bottom: -4rem;
-        left: -3rem;
-    }
-
-    #projects {
-        display: flex;
-        flex-flow: column;
-        margin-top: 5rem;
-        align-items: center;
-        margin-bottom: 5rem;
+        left: -10%;
     }
 
     #projects h2 {
         font-size: 1.4rem;
         color: #B554E3;
+    }
+    
+    .page-section{
+        margin-bottom: 5rem;
+    }
+
+    #projects {
+        margin-bottom: 8rem;
     }
 
     .section-text{
