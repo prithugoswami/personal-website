@@ -108,11 +108,11 @@
     <div class=container>
       <h1>Some of my works</h1>
       <div class="shadow-box">
-        <div class="project-text">
+        <div class="section-text">
           {{ range .Site.Data.projects }}
           <a href="{{ .url }}" target="_blank">
-            <div class="project-item">
-              <h2>- {{ .title }}</h2>
+            <div class="section-item">
+              <h2>{{ .title }}</h2>
               <p>{{ .description }}</p>
             </div>
           </a>
@@ -127,12 +127,13 @@
     <div class=container>
       <h1>I also write about stuff</h1>
       <div class="shadow-box">
-        <div class="project-text">
+        <div class="section-text">
           {{ range sort (where .Site.RegularPages "Section" "posts") "Date" }}
           <a href="{{ .RelPermalink }}" target="_blank">
-            <div class="project-item">
-              <h2>- {{ .Title }}</h2>
-              <p>{{ .Date.Format "2 Jan 2006" }}<p>
+            <div class=section-item>
+              <h2>{{ .Title }}</h2>
+              <p>{{ with .Params.description }}{{ . }}{{ else }}{{.Summary | truncate 110 }}{{ end }}</p>
+              <!-- <p>{{ .Date.Format "2 Jan 2006" }}<p> -->
             </div>
           </a>
           {{ end }}
