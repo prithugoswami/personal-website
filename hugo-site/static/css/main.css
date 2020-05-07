@@ -76,6 +76,7 @@ nav a{
     width: 65%;
     margin: 0 auto;
     position: relative;
+    max-width: 664px;
 }
 
 .shadow-box{
