@@ -61,16 +61,19 @@ nav a{
     color: black;
 }
 
+/* #intro{ */
+/*     margin: 0 auto; */
+/*     display:flex; */
+/*     flex-flow: column; */
+/*     margin-top: 6rem; */
+/* } */
+
 #intro{
-    width: 90%;
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
-    margin-top: 100px;
+    margin-top: 6rem;
 }
 
 .container{
-    width: auto;
+    width: 65%;
     margin: 0 auto;
     position: relative;
 }
@@ -105,37 +108,18 @@ nav a{
 }
 
 
-.head-text {
+#intro h1 {
     position: absolute;
     top: -40px;
     right: -130px;
     color: #414141;
     line-height: 1;
-}
-
-.sub-head{
-    font-weight:700;
-    font-size: 48px;
-    position: absolute;
-    top: -35px;
-    left: -50px;
-    color: #242424;
-    text-shadow: 0 4px 7px rgba(0,0,0,0.2);
-}
-
-.head-text h1{
     font-size: 64px;
     font-weight: 700;
     text-shadow: 0 4px 7px rgba(0,0,0,0.2);
 }
 
-.head-text h2{
-    font-size: 20px;
-    font-weight: 500;
-    padding-left: 3px;
-}
-
-.intro-text{
+#intro-text{
     padding: 6rem;
     font-weight: 300;
     font-size: 1.1rem;
@@ -172,15 +156,17 @@ nav a{
 #stripes-green{
     width: 237px;
     position: absolute;
-    top: -60px;
-    right: 0px;
+    top: -4rem;
+    right: -8rem;
+    z-index: -1;
 }
 
 #stripes-purp{
     width: 204px;
     position: absolute;
-    bottom: -75px;
-    left: 40px;
+    bottom: -5rem;
+    left: -5rem;
+    z-index: -1;
 }
 
 
@@ -250,10 +236,10 @@ nav a{
 }
 
 .page-section{
+    margin: 0 auto;
     display: flex;
     flex-flow: column;
-    margin-top: 10rem;
-    margin-bottom: 5rem;
+    margin-bottom: 10rem;
 }
 
 #writeups a:hover{
@@ -296,7 +282,7 @@ nav a{
     color: #4ED44C;
 }
 
-.page-section p{
+.page-section .section-sub-text{
     margin-left: 1.6rem;
     margin-bottom: 1rem;
 }
@@ -356,11 +342,11 @@ nav a{
         align-items: center ;
     }
 
-    .head-text {
+    #intro h1 {
         display: none;
     }
     
-    .shadow-box{
+    .container{
         width: 85%;
     }
 
@@ -381,7 +367,7 @@ nav a{
         box-shadow: 0 7px 10px rgba(0,0,0,0.25);
     }
 
-    .intro-text{
+    #intro-text{
         padding: 0 3rem;
         padding-top: 5rem;
         padding-bottom: 4rem;
@@ -404,15 +390,15 @@ nav a{
     #stripes-green {
         width: 150px;
         position: absolute;
-        top: -60px;
-        right: 0px;
+        top: -4rem;
+        right: -2.5rem;
     }
 
     #stripes-purp {
         width: 140px;
         position: absolute;
-        bottom: -65px;
-        left: -10px;
+        bottom: -4rem;
+        left: -3rem;
     }
 
     #projects {
@@ -451,10 +437,6 @@ nav a{
     }
 
     #project-cta{
-        background: #B554E3;
-        color: white;
-        box-shadow: 0px 7px 7px rgba(0,0,0,0.15);
-        transform: none;
         position: relative;
         left: calc(70% - 70px);
         top: 1.5rem;

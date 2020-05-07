@@ -4,26 +4,26 @@
 
   {{ partial "nav.html" }}
 
-  <section id="intro">
+  <section id="intro" class="page-section">
     <div class="container">
-      <svg id="stripes-green" width="237" xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 237 209" preserveAspectRatio="xMidYMid meet">
-        <rect x="21" y="16" width="162" height="13" rx="6" transform="rotate(39 21 16)" fill="#8BEF89"/>
-        <rect x="52" y="68" width="205" height="13" rx="6" transform="rotate(39 52 68)" fill="#8BEF89"/>
-        <rect x="44" y="8" width="189" height="13" rx="6" transform="rotate(39 44 8)" fill="#8BEF89"/>
-        <circle cx="152" cy="132" r="6" transform="rotate(39 152 132)" fill="#8BEF89"/>
-        <circle cx="38" cy="65" r="6" transform="rotate(39 38 65)" fill="#8BEF89"/>
-      </svg>
-      <svg id="stripes-purp"width="204" xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 204 182" preserveAspectRatio="xMidYMid meet">
-        <rect x="21" y="16" width="162" height="13" rx="6" transform="rotate(39 21 16)" fill="#B554E3"/>
-        <rect x="52" y="68" width="162" height="13" rx="6" transform="rotate(39 52 68)" fill="#B554E3"/>
-        <rect x="44" y="8" width="162" height="13" rx="6" transform="rotate(39 44 8)" fill="#B554E3"/>
-        <circle cx="152" cy="132" r="6" transform="rotate(39 152 132)" fill="#B554E3"/>
-        <circle cx="38" cy="65" r="6" transform="rotate(39 38 65)" fill="#B554E3"/>
-      </svg>
-
       <div class="shadow-box">
+        <svg id="stripes-green" width="237" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 237 209" preserveAspectRatio="xMidYMid meet">
+          <rect x="21" y="16" width="162" height="13" rx="6" transform="rotate(39 21 16)" fill="#8BEF89"/>
+          <rect x="52" y="68" width="205" height="13" rx="6" transform="rotate(39 52 68)" fill="#8BEF89"/>
+          <rect x="44" y="8" width="189" height="13" rx="6" transform="rotate(39 44 8)" fill="#8BEF89"/>
+          <circle cx="152" cy="132" r="6" transform="rotate(39 152 132)" fill="#8BEF89"/>
+          <circle cx="38" cy="65" r="6" transform="rotate(39 38 65)" fill="#8BEF89"/>
+        </svg>
+        <svg id="stripes-purp"width="204" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 204 182" preserveAspectRatio="xMidYMid meet">
+          <rect x="21" y="16" width="162" height="13" rx="6" transform="rotate(39 21 16)" fill="#B554E3"/>
+          <rect x="52" y="68" width="162" height="13" rx="6" transform="rotate(39 52 68)" fill="#B554E3"/>
+          <rect x="44" y="8" width="162" height="13" rx="6" transform="rotate(39 44 8)" fill="#B554E3"/>
+          <circle cx="152" cy="132" r="6" transform="rotate(39 152 132)" fill="#B554E3"/>
+          <circle cx="38" cy="65" r="6" transform="rotate(39 38 65)" fill="#B554E3"/>
+        </svg>
+
         <svg id="triangle" xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 128 59" preserveAspectRatio="xMidYMid meet">
           <path d="M34 0l47 9 47 10L0 59z" />
@@ -33,11 +33,9 @@
           viewBox="0 0 74 74" preserveAspectRatio="xMidYMid meet">
           <circle cx="37" cy="37" r="37" />
         </svg>
-        <div class="head-text">
-          <h1>Prithu Goswami</h1>
-        </div>
+        <h1>Prithu Goswami</h1>
 
-        <div class="intro-text">
+        <div id="intro-text">
           <p>
           Hey there, I am Prithu Goswami. I am currently studying at PES
           University South Campus, Bangalore(PESIT-BSC) where I am persuing
@@ -76,7 +74,6 @@
             </div>
           </a>
         </div>
-
       </div>
     </div>
     <div id="socials-2">
@@ -113,7 +110,7 @@
           <a href="{{ .url }}" target="_blank">
             <div class="section-item">
               <h2>{{ .title }}</h2>
-              <p>{{ .description }}</p>
+              <p class="section-sub-text">{{ .description }}</p>
             </div>
           </a>
           {{ end }}
@@ -132,7 +129,7 @@
           <a href="{{ .RelPermalink }}" target="_blank">
             <div class=section-item>
               <h2>{{ .Title }}</h2>
-              <p>{{ with .Params.description }}{{ . }}{{ else }}{{.Summary | truncate 110 }}{{ end }}</p>
+              <p class="section-sub-text">{{ with .Params.description }}{{ . }}{{ else }}{{.Summary | truncate 110 }}{{ end }}</p>
               <!-- <p>{{ .Date.Format "2 Jan 2006" }}<p> -->
             </div>
           </a>
