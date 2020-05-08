@@ -61,12 +61,12 @@ another problem. The Nam window spawns another annoying small window that
 serves no purpose but to display the version and some copyright info, and if
 you close it, the main animation window gets closed as well.
 
-{{< figure src="annoying-window.png" title="The annoying Nam window" width=40% >}}
+{{< figure src="annoying-window.png" title="The annoying Nam window" width="40%" >}}
 
 Both theses windows open as normal windows in i3 and hence get tiled which is
 again annoying as it messes up my terminal.
 
-{{< figure src="before-configuring.png" title="Before configuring i3" width=90% >}}
+{{< figure src="before-configuring.png" title="Before configuring i3" width="90%" >}}
 
 Instead of having the main window tiled I would like it to be floating to the
 right side of the screen. As for the unwanted window, I would like it to be
@@ -88,7 +88,7 @@ i3 will move it the scratchpad workspace, out of sight. And for the main
 animation window titled "nam <filename.nam>", i3 will set the window to float,
 reisze it to 800x720 and move to position x=560 and y=25 on the screen.
 
-{{< figure src="after-configuring.png" title="After configuring i3" width=90% >}}
+{{< figure src="after-configuring.png" title="After configuring i3" width="90%" >}}
 
 This was a small instance where good configurable tools, with a few lines of
 configuration (literally three lines in this case) can make a huge impact on
