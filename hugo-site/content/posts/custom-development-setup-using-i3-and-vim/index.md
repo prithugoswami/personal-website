@@ -6,7 +6,7 @@ tags:
 - i3
 - vim
 - workflow
-draft: true
+draft: false
 ---
 
 I see extendable software like vim and i3 really good tools to work with. I
@@ -60,12 +60,12 @@ another problem. The Nam window spawns another annoying small window that
 serves no purpose but to display the version and some copyright info, and if
 you close it, the main animation window gets closed as well.
 
-![Annoying nam window](annoying-window.png)
+{{< figure src="annoying-window.png" title="The annoying Nam window" width=40% >}}
 
 Both theses windows open as normal windows in i3 and hence get tiled which is
 again annoying as it messes up my terminal.
 
-![Before configuring i3](before-configuring.png)
+{{< figure src="before-configuring.png" title="Before configuring i3" width=90% >}}
 
 Instead of having the main window
 tiled I would like it to be floating and to the right side of the screen. As
@@ -87,5 +87,5 @@ i3 will move it the scratchpad workspace, out of sight. And for the main
 animation window titled "nam <filename.nam>", i3 will set the window to float,
 reisze it to 800x720 and move to position x=560 and y=25 on the screen.
 
-![After configuring i3](after-configuring.png)
+{{< figure src="after-configuring.png" title="After configuring i3" width=90% >}}
 

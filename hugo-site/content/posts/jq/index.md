@@ -8,7 +8,8 @@ tags:
 - command line
 ---
 
-![screenshot](./screen.png)
+
+{{< figure src="screen.png" title="i3bar screenshot" width=100% >}}
 
 It's the IPL season and I thought why not keep a track of the score of the
 matches that are in progress. I have two tests tomorrow and I don't want to be
