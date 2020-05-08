@@ -30,7 +30,7 @@
 
 .bcontent{
     /* background-color: lightgreen; */
-    width: 60%;
+    width: 55%;
 }
 .bcontent h1{
     font-size: 2.3rem;
@@ -86,13 +86,35 @@
 }
 
 .post-text{
-    font-family: Roboto, Sans-serif;
+    /* font-family: Roboto, Sans-serif; */
+    font-family: "Noto Serif";
     font-size: 1.2rem;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.post-text figure h4{
+    color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 0.5rem;
+}
+
+.post-text figure{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.post-text figure img{
+    margin: 0 auto;
 }
 
 .post-text p{
-    line-height: 1.4;
+    line-height: 1.5;
+    margin: 1rem 0;
 }
+
 .post-text h1{
     font-size:1.7rem;
     font-weight: 700;
@@ -124,11 +146,6 @@
     font-size: 0.9rem;
     overflow-y: hidden;
     overflow-x: scroll;
-}
-
-.post-text img{
-    margin: 0 auto;
-    width: 90%;
 }
 
 .post-text > p > code{
