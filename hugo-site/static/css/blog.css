@@ -45,16 +45,16 @@
 .post-labels{
     display:flex;
     flex-wrap: wrap;
-    margin-left: -0.4rem;
+    margin-left: -0.2rem;
     margin-bottom: 2rem;
 }
 
 .post-label{
     background-color: rgba(0, 0, 0, 0.15);
-    border-radius: 0.4rem;
-    padding: 0.2rem 1rem;
-    font-size: 0.8rem;
-    margin: 0.2rem 0.4rem;
+    border-radius: 0.3rem;
+    padding: 0.2rem 0.8rem;
+    font-size: 0.85rem;
+    margin: 0.2rem 0.2rem;
 }
 
 .posts{
@@ -111,7 +111,6 @@
 }
 
 .post-text p{
-    text-align: justify;
     line-height: 1.5;
     margin: 1rem 0;
 }
