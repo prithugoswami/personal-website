@@ -1,5 +1,5 @@
 .bcontainer{
-    margin-top: 40px;
+    margin-top: 2rem;
     display: flex;
     flex-flow: row;
     width: 100%;
@@ -88,7 +88,7 @@
 .post-text{
     /* font-family: Roboto, Sans-serif; */
     font-family: "Noto Serif";
-    font-size: 1.2rem;
+    font-size: 18px;
     color: rgba(0, 0, 0, 0.8);
 }
 
@@ -159,6 +159,10 @@
 @media only screen and (max-width: 767px){
     .bcontent {
         width: 90%;
+    }
+
+    .bcontainer {
+        margin-top: 1rem;
     }
 
 }

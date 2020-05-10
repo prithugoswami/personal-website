@@ -386,7 +386,7 @@ nav a{
     }
     
     .container{
-        width: 85%;
+        width: 90%;
     }
 
     #socials{
@@ -430,7 +430,7 @@ nav a{
         width: 150px;
         position: absolute;
         top: -4rem;
-        right: -7%;
+        right: -4%;
     }
 
     #stripes-purp {
