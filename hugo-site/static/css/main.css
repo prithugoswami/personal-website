@@ -71,6 +71,7 @@ nav a{
         width: 80%;
     }
 
+    /* just keep one nav child for smaller screens */
     nav > *:not(:first-child) {
         display: none;
     }
@@ -104,7 +105,7 @@ nav a{
 
 
 #intro{
-    margin-top: 5rem;
+    margin-top: 4rem;
 }
 
 .container{
@@ -190,18 +191,18 @@ nav a{
 }
 
 #stripes-green{
-    width: 237px;
+    width: 190px;
     position: absolute;
-    top: -4rem;
-    right: -8rem;
+    top: -3.4rem;
+    right: -6.2rem;
     z-index: -1;
 }
 
 #stripes-purp{
-    width: 204px;
+    width: 160px;
     position: absolute;
     bottom: -5rem;
-    left: -5rem;
+    left: -4.5rem;
     z-index: -1;
 }
 
