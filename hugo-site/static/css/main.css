@@ -375,8 +375,7 @@ nav a{
 
 @media only screen and (max-width: 767px){
     #intro{
-        width: 100%;
-        margin-top: 8rem;
+        margin-top: 5rem;
         display: flex;
         flex-flow: column;
         align-items: center ;
@@ -431,14 +430,14 @@ nav a{
         width: 150px;
         position: absolute;
         top: -4rem;
-        right: -2.5rem;
+        right: -7%;
     }
 
     #stripes-purp {
         width: 140px;
         position: absolute;
         bottom: -4rem;
-        left: -10%;
+        left: -7%;
     }
 
     #projects h2 {
