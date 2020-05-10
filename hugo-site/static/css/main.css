@@ -28,6 +28,7 @@ nav {
     height: 5rem;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 nav > *:first-child{
@@ -58,6 +59,29 @@ nav a{
     text-transform: uppercase;
     font-weight: 700;
     color: black;
+}
+
+@media only screen and (max-width: 767px){
+    nav {
+        justify-content: center;
+    }
+
+    nav > *:first-child {
+        margin-left: 0;
+        width: 80%;
+    }
+
+    nav > *:not(:first-child) {
+        display: none;
+    }
+
+    .nav-group {
+        justify-content: space-between;
+    }
+
+    .nav-group > *:not(:first-child) {
+        margin-left: 0;
+    }
 }
 
 .sub-head{
