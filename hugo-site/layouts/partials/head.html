@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/blog.css">
   <link rel="icon" type="img/png" href="/img/favicon.png">
-  {{ if hugo.IsProduction }}
+  {{ if eq .Hugo.Environment "production" }}
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165619342-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
