@@ -7,6 +7,12 @@
   <meta name="description" content="Prithu Goswami's personal website">
   <meta name="author" content="Prithu Goswami">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/blog.css">
+  <link rel="icon" type="img/png" href="/img/favicon.png">
+  {{ if hugo.IsProduction }}
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165619342-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -15,10 +21,6 @@
 
     gtag('config', 'UA-165619342-1');
   </script>
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700" rel="stylesheet"> 
-  <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400" rel="stylesheet"> 
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/blog.css">
-  <link rel="icon" type="img/png" href="/img/favicon.png">
+  {{ end }}
 
 </head>
