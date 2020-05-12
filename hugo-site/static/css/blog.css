@@ -106,6 +106,15 @@
     margin-bottom: 1rem;
 }
 
+.post-text a {
+    color:#B554E3;
+}
+
+.post-text a:hover {
+    color: #8a3ead;
+    text-decoration: underline;
+}
+
 .post-text figure img{
     margin: 0 auto;
 }
@@ -154,6 +163,16 @@
     background: rgba(0, 0, 0, 0.15);
     padding: 0 0.4rem;
     border-radius: 0.2rem;
+}
+
+.post-text blockquote {
+    margin: 2rem;
+    margin-right: 0;
+    padding-left: 1rem;
+    border-left: 2px solid rgba(0,0,0,0.5);
+    font-size: 16px;
+    color: rgba(0,0,0,0.7);
+    text-transform: italic;
 }
 
 @media only screen and (max-width: 767px){
