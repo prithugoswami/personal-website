@@ -6,9 +6,15 @@
   {{ if .IsHome }} 
   <title>Prithu Goswami</title>
   <meta name="description" content="Prithu Goswami's personal website">
+  <meta property="og:title" content="Prithu Goswami">
+  <meta property="og:description" content="Prithu Goswami's personal website">
+  <meta property="og:image" content="/img/favicon.png">
   {{ else }}
   <title>Prithu Goswami - {{ humanize .Page.Type}} - {{.Title}}</title>
   <meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{.Summary | truncate 110 }}{{ end }}">
+  <meta property="og:title" content="{{.Title}}">
+  <meta property="og:description" content="{{ with .Params.description }}{{ . }}{{ else }}{{.Summary | truncate 110 }}{{ end }}">
+  <meta property="og:image" content="/img/favicon.png">
   {{ end }}
   <meta name="author" content="Prithu Goswami">
   <meta name="viewport" content="width=device-width, initial-scale=1">
