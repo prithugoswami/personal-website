@@ -326,7 +326,7 @@ Position,Const,Created,Modified,Description,Title,URL,Title Type,IMDb Rating,Run
 8,tt8772262,2019-12-27,2019-12-27,,Midsommar,https://www.imdb.com/title/tt8772262/,movie,7.1,148,2019,"Drama, Horror, Mystery, Thriller",150798,2019-06-24,Ari Aster
 {{< /highlight >}}
 
-We can use `cut` to decide what fields we need to print:
+We can use `cut` to decide which fields we need to print:
 
 {{< highlight bash >}}
 $ curl https://www.imdb.com/list/ls020046354/export | cut -d ',' -f 6

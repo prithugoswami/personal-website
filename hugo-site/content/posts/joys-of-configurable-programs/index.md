@@ -1,5 +1,5 @@
 ---
-title: "The joys of configurable programs like vim and i3"
+title: "The joys of using configurable programs like vim and i3"
 date: 2019-12-02T14:15:30+05:30
 description: "I go through how i3 and vim can be used to setup a custom workspace for working with NS (network simulator) and Nam (network animator)"
 tags:
