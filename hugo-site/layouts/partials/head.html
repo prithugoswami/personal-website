@@ -5,10 +5,11 @@
   <meta charset="utf-8">
   {{ if .IsHome }} 
   <title>Prithu Goswami</title>
+  <meta name="description" content="Prithu Goswami's personal website">
   {{ else }}
   <title>Prithu Goswami - {{ humanize .Page.Type}} - {{.Title}}</title>
+  <meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{.Summary | truncate 110 }}{{ end }}">
   {{ end }}
-  <meta name="description" content="Prithu Goswami's personal website">
   <meta name="author" content="Prithu Goswami">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700" rel="stylesheet">
