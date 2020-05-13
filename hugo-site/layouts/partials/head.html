@@ -3,7 +3,11 @@
 <head>
 
   <meta charset="utf-8">
+  {{ if .IsHome }} 
   <title>Prithu Goswami</title>
+  {{ else }}
+  <title>Prithu Goswami - {{ humanize .Page.Type}} - {{.Title}}</title>
+  {{ end }}
   <meta name="description" content="Prithu Goswami's personal website">
   <meta name="author" content="Prithu Goswami">
   <meta name="viewport" content="width=device-width, initial-scale=1">
