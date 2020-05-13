@@ -273,7 +273,7 @@ $ wget -O - -q reddit.com/r/memes.json | jq '.data.children[] |.data.url' | xarg
 Now, feh pops up with the memes and I can just browse through them using the
 arrow keys like they were on my local disk.
 
-{{< figure src="feh-meme2.png" title="Feh screen" width="100%" >}}
+{{< figure src="feh-meme.png" title="Feh screen" width="100%" >}}
 
 Or I could simply just download all of the images using wget, by replacing
 `feh` with `wget` above.
