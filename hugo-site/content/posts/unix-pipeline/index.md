@@ -44,7 +44,7 @@ can pass the `--format=<format>` option to it and mention what format we want
 the commits to be displayed in. `--format='%an'` just prints the author's name
 for each commit.
 
-```bash
+{{< highlight bash >}}
 $ git log --format='%an'
 
 Alice
@@ -56,10 +56,11 @@ Denise
 Alice
 Alice
 Alice
-```
+{{< /highlight >}}
+
 Now we can use the `sort` utility to sort them alphabetically.
 
-```bash
+{{< highlight bash >}}
 $ git log --format='%an' | sort
 
 Alice
@@ -71,18 +72,19 @@ Candice
 Denise
 Denise
 Denise
-```
+{{< /highlight >}}
 
 Next we use `uniq`
 
-```bash
+{{< highlight bash >}}
 $ git log --format='%an' | sort | uniq -c
 
     4 Alice
     1 Bob
     1 Candice
     3 Denise
-```
+{{< /highlight >}}
+
 According to `uniq`'s man page:
 
 > **uniq** - report or omit repeated lines 
@@ -98,14 +100,14 @@ You can see the output is still sorted alphabetically. So now all that is
 remaining is sort it numerically. There's a flag for that in `sort`, the
 `-n` flag. It considers the numbers based on their numerical value.
 
-```bash
+{{< highlight bash >}}
 $ git log --format='%an' | sort | uniq -c | sort -nr
 
     4 Alice
     3 Denise
     1 Candice
     1 Bob
-```
+{{< /highlight >}}
 
 The `-r` flag was also included to print the list in reverse order. By default
 it sorts it in the ascending order. And their you have it -- A list of authors
@@ -121,7 +123,7 @@ because the actual image will be displayed on a GUI program). We can simply curl
 or wget the url -- https://reddit.com/r/memes.json
 
 
-```bash
+{{< highlight bash >}}
 $ wget -O - -q 'https://reddit.com/r/memes.json'
 
 '{"kind": "Listing", "data": {"modhash": "xyloiccqgm649f320569f4efb427cdcbd89e68aeceeda8fe1a", "dist": 27, "children":
@@ -133,7 +135,7 @@ More lines
 ...
 ...
 
-```
+{{< /highlight >}}
 
 I use wget here because it seems like the Curl User-Agent gets treated
 differently. Obviously, you can get around this by simply changing the
@@ -149,7 +151,7 @@ it's man page.
 
 If you take a look at the response JSON, it looks something like this:
 
-```json
+{{< highlight json >}}
 {
     "kind": "Listing",
     "data": {
@@ -160,14 +162,14 @@ If you take a look at the response JSON, it looks something like this:
         "before": null
     }
 }
-```
+{{< /highlight >}}
 
 So here we have some response of the type "Listing" and we can see we have an
 array of "children". Each element of that array is a post.
 
 This is what one of the elements of the 'children' array looks like:
 
-```json
+{{< highlight json >}}
 {
     "kind": "t3",
     "data": {
@@ -199,7 +201,7 @@ This is what one of the elements of the 'children' array looks like:
         ".................."
     }
 }
-```
+{{< /highlight >}}
 
 I have reduced the number of key value pairs in `data`. In total there were 105
 items. As you can see there are many interesting data attributes you can fetch
@@ -210,7 +212,7 @@ If the post url is what you want then that's `permalink`. So in this case, the
 
 We can simply get the list of of all the urls of of every post using:
 
-```bash
+{{< highlight bash >}}
 $ wget -O - -q reddit.com/r/memes.json | jq '.data.children[] |.data.url'
 
 "https://www.reddit.com/r/memes/comments/g9w9bv/join_the_unofficial_redditmc_minecraft_server_at/"
@@ -221,7 +223,7 @@ $ wget -O - -q reddit.com/r/memes.json | jq '.data.children[] |.data.url'
 "https://i.redd.it/4pfwbtqsaby41.jpg"
 ...
 ...
-```
+{{< /highlight >}}
 
 Ignore the first two links, those are basically sticky posts that the mods put,
 whose 'url' is same as the 'permalink'.
@@ -248,16 +250,16 @@ This is what xarg's man page says:
 
 So running something like:
 
-```bash
+{{< highlight bash >}}
 $ echo "https://i.redd.it/4pfwbtqsaby41.jpg" | xargs wget -O meme.jpg -q
-```
+{{< /highlight >}}
 
 would be equavalent to running:
 
-```bash
+{{< highlight bash >}}
 $ wget -O meme.jpg -q "https://i.redd.it/4pfwbtqsaby41.jpg"
 
-```
+{{< /highlight >}}
 
 Now, we can just pass the list of URLs to an image viewer, like
 [`feh`](https://feh.finalrewind.org/) or
@@ -265,10 +267,10 @@ Now, we can just pass the list of URLs to an image viewer, like
 that accept a URL as a valid argument.
 
 
-```bash
+{{< highlight bash >}}
 $ wget -O - -q reddit.com/r/memes.json | jq '.data.children[] |.data.url' | xargs feh
 
-```
+{{< /highlight >}}
 
 Now, feh pops up with the memes and I can just browse through them using the
 arrow keys like they were on my local disk.
@@ -283,10 +285,10 @@ And the possibilities are endless. Another good use of this reddit JSON data is
 [/r/earthporn](https://reddit.com/r/earthporn) from the "hot" section.
 
 
-```bash
+{{< highlight bash >}}
 $ wget -O - -q reddit.com/r/earthporn.json | jq '.data.children[] |.data.url' | head -1 | xargs feh --bg-fill
 
-```
+{{< /highlight >}}
 
 You can then, if you want, set this up as a cron-job that runs every hour or
 so. I use the `head` command here to just print the first line, which would be
@@ -310,7 +312,7 @@ lists. You can also find lists made by other users. For example - [Blow Your
 Mind Movies](https://www.imdb.com/list/ls020046354). If you append `/export` to
 the url you get the list in a `.csv` format.
 
-```bash
+{{< highlight bash >}}
 $ curl https://www.imdb.com/list/ls020046354/export
 
 Position,Const,Created,Modified,Description,Title,URL,Title Type,IMDb Rating,Runtime (mins),Year,Genres,Num Votes,Release Date,Directors
@@ -322,11 +324,11 @@ Position,Const,Created,Modified,Description,Title,URL,Title Type,IMDb Rating,Run
 6,tt0364569,2018-01-16,2018-01-16,,Oldeuboi,https://www.imdb.com/title/tt0364569/,movie,8.4,120,2003,"Action, Drama, Mystery, Thriller",491476,2003-11-21,Chan-wook Park
 7,tt1130884,2018-10-08,2018-10-08,,Shutter Island,https://www.imdb.com/title/tt1130884/,movie,8.1,138,2010,"Mystery, Thriller",1075524,2010-02-13,Martin Scorsese
 8,tt8772262,2019-12-27,2019-12-27,,Midsommar,https://www.imdb.com/title/tt8772262/,movie,7.1,148,2019,"Drama, Horror, Mystery, Thriller",150798,2019-06-24,Ari Aster
-```
+{{< /highlight >}}
 
 We can use `cut` to decide what fields we need to print:
 
-```bash
+{{< highlight bash >}}
 $ curl https://www.imdb.com/list/ls020046354/export | cut -d ',' -f 6
 
 Title
@@ -338,7 +340,7 @@ American Psycho
 Oldeuboi
 Shutter Island
 Midsommar
-```
+{{< /highlight >}}
 
 The `-d` option is to specify the delimiter for each field. What are the fields
 separated with? In this case it's a comma (`,`). The `-f` option is the field
@@ -349,7 +351,7 @@ movie. This also prints the csv header "Title" so to remove it we can just use
 We can then pipe the list of movies into `shuf`. Shuf just shuffles it's input
 lines randomly and spits it out.
 
-```bash
+{{< highlight bash >}}
 $ curl https://www.imdb.com/list/ls020046354/export | cut -d ',' -f 6 | sed '1 d' | shuf
 
 American Psycho
@@ -360,41 +362,41 @@ Fight Club
 Memento
 Shutter Island
 The Prestige
-```
+{{< /highlight >}}
 
 Now just pipe it into `head -1` or `sed '1 q'` which would print only the first
 line. Every time you run this, you should get a random selection.
 
-```bash
+{{< highlight bash >}}
 $ curl https://www.imdb.com/list/ls020046354/export | cut -d ',' -f 6 | sed '1 d' | shuf | head -1
 
 Source Code
-```
+{{< /highlight >}}
 
 Now let's say you would also like the URL to be printed along with title, no
 problem, `cut` allows you to specify multiple fields to print using `--field=LIST`
 
-```bash
+{{< highlight bash >}}
 $ curl https://www.imdb.com/list/ls020046354/export | cut -d ',' --field=6,7 | sed '1 d' | shuf | head -1
 
 Shutter Island,https://www.imdb.com/title/tt1130884/
-```
+{{< /highlight >}}
 
 There is a problem with this though, if the Movie title has a comma in it, then
 you would get a totally different field value. One way to overcome this is by
 using a python one-liner like this:
 
-```bash
+{{< highlight bash >}}
 python -c 'import csv,sys;[print (a["Title"]) for a in csv.DictReader(sys.stdin)]'
-```
+{{< /highlight >}}
 
-```bash
+{{< highlight bash >}}
 $ curl -s https://www.imdb.com/list/ls020046354/export |\
     python -c 'import csv,sys;[print (a["Title"],a["URL"]) for a in csv.DictReader(sys.stdin)]'|\
     shuf | head -1
 
 Oldeuboi https://www.imdb.com/title/tt0364569/ 
-```
+{{< /highlight >}}
 
 These were just a few examples, there are so many things you can accomplish in
 a single line of shell using pipes.
