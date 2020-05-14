@@ -3,11 +3,11 @@
     display: flex;
     flex-flow: row;
     width: 100%;
+    min-height: calc(100vh - 7rem - 7rem); /* 7rem footer + 7 rem nav + margin */
     justify-content: center;
 }
 
 .blog-menu{
-    /* background-color: pink; */
     border-right: 1px solid #BCBCBC; 
     margin-left: 30px;
     min-width: 170px;

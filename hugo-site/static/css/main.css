@@ -44,6 +44,7 @@ nav > *:first-child{
     margin-left: 4rem;
 }
 
+
 #pg {
     height: 20px ;
     opacity:0.7;
@@ -59,6 +60,23 @@ nav a{
     text-transform: uppercase;
     font-weight: 700;
     color: black;
+}
+
+footer {
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p{
+    font-family: Inter;
+    font-size: 14px;
+    color: rgba(0,0,0,0.7);
+}
+
+footer p a{
+    color: inherit;
 }
 
 @media only screen and (max-width: 767px){
