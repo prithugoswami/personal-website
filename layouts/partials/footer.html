@@ -1,9 +1,19 @@
+{{ if eq .Hugo.Environment "production" }}
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165619342-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165619342-1');
+</script>
+{{ end }}
 <footer>
   <p>
   &copy; Prithu Goswami 2020 &bull;
   <a href="mailto:prithugoswami524@gmail.com">Email me</a> &bull;
   <a href="https://github.com/prithugoswami/personal-website">
-    View Source
+    View source
   </a>
   </p>
 </footer>
