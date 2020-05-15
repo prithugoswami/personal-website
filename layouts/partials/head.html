@@ -10,7 +10,7 @@
   <meta property="og:description" content="Prithu Goswami's personal website">
   <meta property="og:image" content="/img/favicon.png">
   {{ else }}
-  <title>{{.Title}} - {{ humanize .Page.Type}} - Prithu Goswami</title>
+  <title>{{.Title}}</title>
   <meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{.Summary | truncate 110 }}{{ end }}">
   <meta property="og:title" content="{{.Title}}">
   <meta property="og:description" content="{{ with .Params.description }}{{ . }}{{ else }}{{.Summary | truncate 110 }}{{ end }}">
