@@ -34,10 +34,11 @@
 }
 
 .bcontent h1{
-    font-family: Inter;
+    font-family: Inter, sans-serif;
+    font-weight: 900;
     font-size: 2.3rem;
     line-height: 1;
-    color: rgba(0,0,0,0.75)
+    color: rgba(0,0,0,0.7)
 }
 
 .bcontent > .post-date{
@@ -72,7 +73,7 @@
 .post-item{
     display: flex;
     justify-content: space-between;
-    padding: 0.5rem 0.5rem;
+    padding: 0.5rem 1rem;
 }
 
 .post-item > a {
@@ -89,10 +90,11 @@
 
 .post-text{
     /* font-family: Roboto, Sans-serif; */
-    font-family: "Noto Serif";
+    font-family: Inter, sans-serif;
     font-size: 18px;
     color: rgba(0, 0, 0, 0.8);
 }
+
 
 .post-text figure h4{
     color: rgba(0, 0, 0, 0.6);
@@ -122,31 +124,32 @@
 }
 
 .post-text p{
-    line-height: 1.5;
+    line-height: 1.4;
     margin: 1rem 0;
 }
 
 .post-text h1{
     font-size:1.7rem;
-    font-weight: 700;
-    margin-top: 1rem;
+    margin-top: 2.5rem;
 }
 
 .post-text h2{
     font-size:1.5rem;
-    font-weight: 700;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .post-text h3{
     font-size:1.3rem;
-    font-weight: 700;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 
 .post-text ul{
     list-style-position: outside;
     padding: 0 1.2rem;
+}
+
+.post-text ul li{
+    margin: 0.4rem 0rem;
 }
 
 .post-text pre {
@@ -168,11 +171,9 @@
 }
 
 .post-text blockquote {
-    margin: 2rem;
-    margin-right: 0;
-    margin-left: 1rem;
+    margin: 2rem 0rem 2rem 1rem;
     padding-left: 1rem;
-    border-left: 2px solid rgba(0,0,0,0.5);
+    border-left: 4px solid rgba(0,0,0,0.4);
     font-size: 16px;
     color: rgba(0,0,0,0.7);
     text-transform: italic;

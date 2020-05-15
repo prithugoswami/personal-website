@@ -17,7 +17,7 @@ a:hover{
 }
 
 html{
-    font-family: "Roboto Mono",sans-serif;
+    font-family: "Roboto Mono", "Lucida Console", Monaco, monospace;
 }
 
 body{
