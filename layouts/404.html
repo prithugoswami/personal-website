@@ -1,11 +1,13 @@
 {{ partial "head.html" . }}
 
-<body class="flex-body">
+<body>
   {{ partial "nav.html" }}
-  <section id="page404">
-    <div class="shadow-box-error">
-      <h1 class="error">404</h1>
-      <h2 class="sub-head">Not Found<span class="joke">just like my purpose in life...</span></h2>
+  <section id="sec-404" class=page-section>
+    <div class="container">
+      <div class="shadow-box">
+        <h1>Not Found<span class="joke">just like my purpose in life...</span></h1>
+        <h2>404</h2>
+      </div>
     </div>
   </section>
   {{ partial "footer.html" . }}
