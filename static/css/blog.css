@@ -158,8 +158,20 @@
     padding: 1rem;
     margin: 0.5rem 0;
     font-size: 0.9rem;
-    overflow-y: hidden;
     overflow-x: scroll;
+}
+
+.post-text pre::-webkit-scrollbar {
+    height: 6px;
+}
+
+.post-text pre::-webkit-scrollbar-thumb {
+  background-color: rgba(255,255,255,0.35);
+  border-radius: 20px;
+}
+
+.post-text pre::-webkit-scrollbar-thumb:active {
+  background-color: rgba(3,122,255,0.8);
 }
 
 .post-text > p > code{
