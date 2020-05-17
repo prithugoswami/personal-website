@@ -1,3 +1,7 @@
 baseURL = "https://prithu.xyz/"
 languageCode = "en-us"
 title = "Prithu Goswami"
+
+[author]
+    name = "Prithu Goswami"
+    email = "prithugoswami524@gmail.com"
