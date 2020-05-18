@@ -26,8 +26,14 @@ Envirnonment](https://en.wikipedia.org/wiki/The_UNIX_Programming_Environment)
 > programs do quite trivial things in isolation, but, combined with other
 > programs, become general and useful tools.
 
-I think that explains it pretty well, but in this post I would like to show
-some examples of how you can use unix pipelines to accomplish tasks.
+I think that explains it pretty well. Also, [watch Brian
+Kernighan](https://youtu.be/tc4ROCJYbm0?t=297) being a complete chad and
+explaining fundamentals of the UNIX OS where he also goes through an example of
+using pipes. 
+
+In this post though, I would like to show some examples of this
+philosophy in action -- of how one can use different unix tools together to
+accomplish something powerful.
 
 Examples:
 - Printing a leaderboard of authors based on number of commits to a git repo
@@ -301,8 +307,9 @@ fetching JSON data, parsing and getting the relevant data out of it and then
 again fetching the image from the URL and finally setting it as the wallpaper.
 
 Another silly thing I used this for was for just downloading memes off of
-/r/memes every two hours. So now I have around 19566 memes taking up 4.5G on my
-disk. Why did I do that? Don't ask me...
+/r/memes every two hours. This is set up as a cron job on my machine. Now I
+have around 19566 memes taking up 4.5G on my disk. Why did I do that? Don't ask
+me...
 
 
 ## Example 3 - Get a random movie from an IMDb list

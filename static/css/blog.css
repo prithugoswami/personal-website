@@ -187,8 +187,18 @@
 
 .post-text > p > code{
     font-family: 'Roboto Mono';
-    font-size: 90%;
+    font-size: 14px;
     background: rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0,0,0,0.2);
+    padding: 0 0.4rem;
+    border-radius: 0.2rem;
+}
+
+.post-text > p > a > code{
+    font-family: 'Roboto Mono';
+    font-size: 14px;
+    background: rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0,0,0,0.1);
     padding: 0 0.4rem;
     border-radius: 0.2rem;
 }
