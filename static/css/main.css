@@ -235,7 +235,7 @@ footer p a{
 .sb{
     padding: 15px;
     display: flex;
-    transition: transform 150ms ease;
+    transition: all 150ms ease;
     box-shadow: 0px 7px 10px rgba(0,0,0,0.20);
     border-radius: 6px;
 }
@@ -348,7 +348,7 @@ footer p a{
     padding: 1rem 2rem;
     border-radius: 6px;
     box-shadow: 0px 7px 7px rgba(0,0,0,0.15);
-    transition: transform 150ms ease;
+    transition: all 150ms ease;
 }
 
 .btn:hover {
@@ -360,6 +360,10 @@ footer p a{
 .btn:active{
     transform: translateY(1px);
     box-shadow: 0 4px 7px rgba(50, 50, 93, 0.2), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.btn:focus{
+    outline: none;
 }
 
 #project-cta{
