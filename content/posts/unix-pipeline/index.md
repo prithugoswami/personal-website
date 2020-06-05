@@ -148,7 +148,7 @@ differently. Obviously, you can get around this by simply changing the
 'User-Agent' header, but I just went with `wget`. Wget has a `-O` to provide
 the output filename. Most programs that take such an option also allow a value
 of `-` which represents the standard output or input depending on the context.
-The `-q` option just tells wget to be quite and not print things like progress
+The `-q` option just tells wget to be quiet and not print things like progress
 status. Now we get a big JSON structure to work with. Now, to parse and use this
 JSON data meaningfully on the command line, we can use
 [`jq`](https://stedolan.github.io/jq/). `jq` can be thought of as `sed`/`awk`
