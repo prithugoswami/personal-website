@@ -407,3 +407,5 @@ Oldeuboi https://www.imdb.com/title/tt0364569/
 
 These were just a few examples, there are so many things you can accomplish in
 a single line of shell using pipes.
+
+[View discussion on Hacker News](https://news.ycombinator.com/item?id=23420786)
