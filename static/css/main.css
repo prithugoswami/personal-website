@@ -314,6 +314,7 @@ footer p a{
 }
 
 .page-section h2 {
+    font-family: Inter;
     font-size: 1.4rem;
 }
 
@@ -326,7 +327,8 @@ footer p a{
 }
 
 .page-section .section-sub-text{
-    margin-left: 1.6rem;
+    margin-left: 0.6rem;
+    margin-top: 0.3rem;
     margin-bottom: 1rem;
     color: rgba(0,0,0,0.7);
 }
