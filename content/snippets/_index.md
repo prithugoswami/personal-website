@@ -11,12 +11,6 @@ put the contents into the clipboard
 git remote -v | awk '{print $2}' | head -1 | tr -d '\n' | xsel -ib
 ```
 
-{{< highlight bash >}}
-
-git remote -v | awk '{print $2}' | head -1 | tr -d '\n' | xsel -ib
-
-{{< /highlight >}}
-
 
 ## Using image magick to create single color canvas
 This create a 100x100 image with the color #131313
