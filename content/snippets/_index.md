@@ -1,7 +1,13 @@
 ---
-title: Snippets
+ptitle: Snippets
 description: "Some one-liners and code snippets that are useuful"
 ---
+
+This is just a list of snippets I find usefull and intriguing. This is not a
+furnished list yet. The list includes mostly bash/command-line one-liners but I
+don't want it to be restricted to just that. Hopefully will be having more of
+these and probably also have a search functionality once there are enough in
+number.
 
 ## Using awk, tr, to get the remote info of a git repo
 This will output the (fetch) remote of a git repository and
