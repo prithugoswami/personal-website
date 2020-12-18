@@ -7,6 +7,7 @@ tags:
 - command line
 - scripts
 ---
+> View discussion on [Hacker News](https://news.ycombinator.com/item?id=23420786)
 
 The Unix philosophy lays emphasis on building software that is simple and
 extensible. Each piece of software must do one thing and do it well. And that
@@ -407,5 +408,3 @@ Oldeuboi https://www.imdb.com/title/tt0364569/
 
 These were just a few examples, there are so many things you can accomplish in
 a single line of shell using pipes.
-
-[View discussion on Hacker News](https://news.ycombinator.com/item?id=23420786)

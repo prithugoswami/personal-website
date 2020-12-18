@@ -125,6 +125,16 @@
     color:#B554E3;
 }
 
+/* .post-text a::after { */
+/*   display: inline-block; */
+/*   content: ' '; */
+/*   background-image: url('../img/ext-arrow.svg'); */
+/*   margin-left: 6px; */
+/*   /1* background-size: 28px 28px; *1/ */
+/*   height: 12px; */
+/*   width: 12px; */
+/* } */
+
 .post-text a:hover {
     color: #8a3ead;
     text-decoration: underline;
