@@ -1,5 +1,5 @@
 ---
-ptitle: Snippets
+title: Snippets
 description: "Some one-liners and code snippets that are useuful"
 ---
 
