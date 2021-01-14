@@ -71,10 +71,21 @@ standard format. If the hook exits with a non-zero cdoe, the commit is aborted.
 We also have server-side hooks that live on the remote's bare repository.
 `pre-recieve` hook runs before refs are updated on the remote. The script can
 exit with a non-zero code and the push won't be accepted and the client will be
-notified. `post-recieve` on the other hand runs when all the refs are updated
-on the remote. This hook can be thought of as a hook that runs when there is a
-'push'. This hook gets information of what refs were updated - if the master
-branch was updated then this information is passed on to the script along with
-the last hash and the new updated hash.
+notified of the failure. `post-recieve` on the other hand runs when all the
+refs are updated on the remote. This hook can be thought of as a hook that runs
+when there is a 'push'. This hook gets information of what refs were updated -
+if the master branch was updated then this information is passed on to the
+script along with the last hash and the new updated hash. This information is
+passed on to the script through the standard input. For example the
+`post-recieve` script would have the following line would be passed to the
+stdin.
+
+```
+689d4729b362e69a27600bb5bc26ca043c67f49f c60d357c48be63ff8ad8a6f94ab2f525332a9cd7 refs/heads/master
+```
+
+`689d472` is the old object hash, `c60d357` is the new hash value and
+`refs/heads/master` is the ref being updated. So the `master` branch is now
+pointing to `c60d357`
 
 
