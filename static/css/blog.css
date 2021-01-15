@@ -175,9 +175,11 @@
 
 .post-text pre {
     max-width: 100%;
-    background: #ddd;
+    background: #e6e6e6;
     padding: 1rem;
     margin: 0.5rem 0;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 4px;
     font-size: 0.9rem;
     overflow-x: scroll;
 }
