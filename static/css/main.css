@@ -112,6 +112,11 @@ footer p a{
     margin-top: 4rem;
 }
 
+#intro a{
+    font-weight: 500;
+    text-decoration: underline;
+}
+
 .container{
     width: 65%;
     margin: 0 auto;
