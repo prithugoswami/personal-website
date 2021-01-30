@@ -32,9 +32,17 @@
   }
 
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelector("#theme").addEventListener("change", function() {
+  const savedTheme = localStorage.getItem("theme") || "auto";
+
+  applyTheme(savedTheme);
+
+  for (const optionElement of document.querySelectorAll("#theme option")) {
+    optionElement.selected = savedTheme === optionElement.value;
+  }
+
+  document.querySelector("#theme").addEventListener("change", function () {
+    localStorage.setItem("theme", this.value);
     applyTheme(this.value);
   });
 });
 </script>
-

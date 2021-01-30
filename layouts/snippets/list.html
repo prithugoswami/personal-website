@@ -1,11 +1,12 @@
 {{ partial "head.html" . }}
-<body class="theme-light">
+<body class="theme-auto">
   {{ partial "nav.html" }}
-</body>
   <div class='container'>
     <div class='post-text'>
       {{ .Content }}
     </div>
   </div>
+</body>
 </html>
 
+{{ partial "footer.html" . }}
