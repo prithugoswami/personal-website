@@ -14,13 +14,52 @@ a:focus{
     text-decoration: none;
     color: black;
 }
-a:hover{
-    color: #B554E3;
-}
 
 ::selection {
     background-color: #B554E3;
     color: whitesmoke;
+}
+
+:root{
+    --dark-bg: #171722;
+    --dark-text: #c5c5c5;
+    --dark-text-primary: white;
+    --dark-card-bg: #0F0E17;
+    --dark-card-head: white;
+    --dark-card-text: #d8d8d8;
+    --dark-logo-top: white;
+    --dark-logo-bottom: #eeeeee;
+
+    --light-bg: #f3f3f3;
+    --light-text: #666666;
+    --light-text-primary: black;
+    --light-card-bg: white;
+    --light-card-head: #333333;
+    --light-card-text: #292929;
+    --light-logo-top: #1a1a1a;
+    --light-logo-bottom: #4d4d4d;
+}
+
+body.theme-light{
+    --bg: var(--light-bg);
+    --text: var(--light-text);
+    --text-primary: var(--light-text-primary);
+    --card-bg: var(--light-card-bg);
+    --card-head: var(--light-card-head);
+    --card-text: var(--light-card-text);
+    --logo-top: var(--light-logo-top);
+    --logo-bottom: var(--light-logo-bottom);
+}
+
+body.theme-dark{
+    --bg: var(--dark-bg);
+    --text: var(--dark-text);
+    --text-primary: var(--dark-text-primary);
+    --card-bg: var(--dark-card-bg);
+    --card-head: var(--dark-card-head);
+    --card-text: var(--dark-card-text);
+    --logo-top: var(--dark-logo-top);
+    --logo-bottom: var(--dark-logo-bottom);
 }
 
 
@@ -29,7 +68,7 @@ html{
 }
 
 body{
-    background-color: #f3f3f3;
+    background-color: var(--bg);
 }
 
 nav {
@@ -58,6 +97,14 @@ nav > *:first-child{
     margin-bottom: -6px;
 }
 
+#pg #top{
+    fill: var(--logo-top);
+}
+
+#pg #bottom{
+    fill: var(--logo-bottom);
+}
+
 #pg:hover path {
     fill: #B554E3;
 }
@@ -66,7 +113,7 @@ nav a{
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 700;
-    color: black;
+    color: var(--text-primary);
 }
 
 footer {
@@ -79,7 +126,14 @@ footer {
 footer p{
     font-family: Inter;
     font-size: 14px;
-    color: rgba(0,0,0,0.7);
+    color: var(--text);
+}
+
+footer svg{
+    width:18px;
+    transform:translateY(4px);
+    margin-right:4px;
+    fill: var(--text);
 }
 
 footer p a{
@@ -115,6 +169,7 @@ footer p a{
 }
 
 #intro a{
+    color: inherit;
     font-weight: 500;
     text-decoration: underline;
 }
@@ -127,7 +182,7 @@ footer p a{
 }
 
 .shadow-box{
-    background-color: white;
+    background-color: var(--card-bg);
     border-radius: 24px;
     box-shadow: 0 10px 30px 3px rgba(0,0,0,0.15);
     margin: 0 auto;
@@ -166,7 +221,7 @@ footer p a{
     position: absolute;
     top: -40px;
     right: -130px;
-    color: #414141;
+    color: var(--card-head);
     line-height: 1;
     font-size: 4rem;
     font-weight: 700;
@@ -174,6 +229,7 @@ footer p a{
 }
 
 #intro-text{
+    color: var(--card-text);
     padding: 6rem;
     font-weight: 300;
     font-size: 1.1rem;
@@ -297,13 +353,9 @@ footer p a{
     margin-bottom: 10rem;
 }
 
-#writeups a:hover{
-    color: inherit;
-}
-
 .page-section h1 {
     position: absolute;
-    color: rgba(0,0,0,0.8);
+    color: var(--card-head);
     font-size: 2.4rem;
     text-shadow: 0 4px 7px rgba(0,0,0,0.2);
     z-index: 1;
@@ -342,7 +394,7 @@ footer p a{
     margin-left: 0.6rem;
     margin-top: 0.3rem;
     margin-bottom: 1rem;
-    color: rgba(0,0,0,0.7);
+    color: var(--card-text);
 }
 
 .section-item {
@@ -350,9 +402,12 @@ footer p a{
     padding: 0.2rem 0.8rem;
 }
 
-.section-item:hover {
-    background-color: #eeeeee;
-    border-radius: 0.4rem;
+.section-item a:hover {
+    text-decoration: underline;
+}
+
+.section-item a {
+    color: inherit;
 }
 
 
