@@ -12,7 +12,7 @@ a:active,
 a:focus{
     outline: none;
     text-decoration: none;
-    color: black;
+    color: var(--text-primary);
 }
 
 ::selection {
@@ -29,6 +29,8 @@ a:focus{
     --dark-card-text: #d8d8d8;
     --dark-logo-top: white;
     --dark-logo-bottom: #eeeeee;
+    --dark-pre-bg: #0000003d;
+    --dark-pre-border-color: #ffffff1c;
 
     --light-bg: #f3f3f3;
     --light-text: #666666;
@@ -38,28 +40,38 @@ a:focus{
     --light-card-text: #292929;
     --light-logo-top: #1a1a1a;
     --light-logo-bottom: #4d4d4d;
+    --light-pre-bg: #0000003d;
+    --light-pre-border-color: #ffffff1c;
 }
 
 body.theme-light{
     --bg: var(--light-bg);
     --text: var(--light-text);
     --text-primary: var(--light-text-primary);
+    --text-secondary: var(--light-text);
     --card-bg: var(--light-card-bg);
     --card-head: var(--light-card-head);
     --card-text: var(--light-card-text);
     --logo-top: var(--light-logo-top);
     --logo-bottom: var(--light-logo-bottom);
+    --pre-bg: #0000000f;
+    --pre-border-color: var(--light-pre-border);
 }
 
 body.theme-dark{
     --bg: var(--dark-bg);
     --text: var(--dark-text);
+    --text-secondary: var(--dark-text);
     --text-primary: var(--dark-text-primary);
+    --quote-bar: #ffffff61;
     --card-bg: var(--dark-card-bg);
     --card-head: var(--dark-card-head);
     --card-text: var(--dark-card-text);
     --logo-top: var(--dark-logo-top);
     --logo-bottom: var(--dark-logo-bottom);
+    --pre-bg: var(--dark-pre-bg);
+    --pre-border-color: var(--dark-pre-border);
+    --scrollbar: #ffffff11;
 }
 
 

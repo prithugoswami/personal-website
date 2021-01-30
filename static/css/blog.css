@@ -1,6 +1,5 @@
 @import url('https://rsms.me/inter/inter.css');
 
-
 .bcontainer{
     margin-top: 2rem;
     display: flex;
@@ -8,6 +7,7 @@
     width: 100%;
     min-height: calc(100vh - 7rem - 7rem); /* 7rem footer + 7 rem nav + margin */
     justify-content: center;
+    color: var(--text-primary);
 }
 
 .blog-menu{
@@ -41,8 +41,8 @@
     font-weight: 900;
     font-size: 2.3rem;
     line-height: 1;
-    color: rgba(0,0,0,0.7);
-    fill: rgba(0,0,0,0.7)
+    color: var(--text-primary);
+    fill: var(--text-primary);
 }
 
 #rss a{
@@ -68,7 +68,7 @@
 }
 
 .post-label{
-    background-color: rgba(0, 0, 0, 0.15);
+    background-color: var(--pre-bg);
     border-radius: 0.3rem;
     padding: 0.2rem 0.8rem;
     font-size: 0.85rem;
@@ -92,17 +92,22 @@
     padding: 0.7rem 0rem;
 }
 
+.post-item > a:hover {
+    text-decoration: underline;
+}
+
 .post-item > a {
     margin-right: 4rem;
     overflow: hidden;
-    font-weight: 500;
+    font-weight: 600;
+    color: var(--text-primary);
 }
 
 .post-item > .post-date{
     font-size: 1rem;
     line-height: 1.4;
     white-space: nowrap;
-    color: rgba(0,0,0,0.7);
+    color: var(--text-secondary);
 }
 
 .post-text{
@@ -112,7 +117,7 @@
 
 
 .post-text figure h4{
-    color: rgba(0, 0, 0, 0.6);
+    color: var(--text-secondary);
     text-align: center;
     font-size: 1rem;
     font-weight: 400;
@@ -179,7 +184,7 @@
 
 .post-text pre {
     max-width: 100%;
-    background: #e6e6e6;
+    background: var(--pre-bg);
     padding: 1rem;
     margin: 0.5rem 0;
     border: 1px solid rgba(0,0,0,0.15);
@@ -193,7 +198,7 @@
 }
 
 .post-text pre::-webkit-scrollbar-thumb {
-  background-color: rgba(255,255,255,0.35);
+  background-color: var(--scrollbar);
   border-radius: 20px;
 }
 
@@ -222,9 +227,9 @@
 .post-text blockquote {
     margin: 2rem 0rem 2rem 1rem;
     padding-left: 1rem;
-    border-left: 4px solid rgba(0,0,0,0.2);
+    border-left: 4px solid var(--quote-bar);
     font-size: 16px;
-    color: rgba(0,0,0,0.7);
+    color: var(--text-secondary);
     text-transform: italic;
 }
 
