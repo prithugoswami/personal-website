@@ -112,6 +112,10 @@ nav > *:first-child{
     margin-left: 10%;
 }
 
+nav > *:last-child{
+    margin-right: 10%;
+}
+
 .nav-group {
     display: flex;
     align-items: center;
@@ -139,7 +143,15 @@ nav select:focus {
 }
 
 nav option {
-    color: black;
+    color: var(--text-primary);
+    background: var(--bg);
+    outline: none;
+}
+
+nav option:active,
+nav option:focus {
+    outline: none;
+    border: none;
 }
 
 
