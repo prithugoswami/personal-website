@@ -1,6 +1,7 @@
 baseURL = "https://prithu.xyz/"
 languageCode = "en-us"
 title = "Prithu Goswami"
+ignoreFiles = [ "snippets" ]
 
 [author]
     name = "Prithu Goswami"
