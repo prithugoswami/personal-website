@@ -48,7 +48,8 @@ body.theme-light, body.theme-auto{
     --bg: var(--light-bg);
     --text: var(--light-text);
     --text-primary: var(--light-text-primary);
-    --text-secondary: var(--light-text);
+    --text-secondary: #4e4e4e;
+    --quote-bar: #00000030;
     --card-bg: var(--light-card-bg);
     --card-head: var(--light-card-head);
     --card-text: var(--light-card-text);
