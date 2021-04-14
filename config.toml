@@ -1,7 +1,7 @@
-baseURL = "https://prithu.xyz/"
+baseURL = "https://prithu.dev/"
 languageCode = "en-us"
 title = "Prithu Goswami"
-ignoreFiles = [ "snippets" ]
+#ignoreFiles = [ "snippets" ]
 
 [author]
     name = "Prithu Goswami"

@@ -1,3 +1,3 @@
 ## My Personal Website
 
-Built using Hugo. Visit [prithu.xyz](https://www.prithu.xyz)
+Built using Hugo. Visit [prithu.dev](https://www.prithu.dev)
