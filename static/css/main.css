@@ -93,11 +93,6 @@ body.theme-dark{
     --scrollbar: #ffffff11;
 }
 
-
-html{
-    font-family: "Roboto Mono", "Lucida Console", Monaco, monospace;
-}
-
 body{
     background-color: var(--bg);
 }
@@ -132,7 +127,7 @@ nav select {
     text-transform: uppercase;
     background: none;
     color: var(--text-primary);
-    font-family: "Roboto Mono";
+    font-family: monospace;
     font-size: inherit;
     font-weight: 700;
     border: none;
