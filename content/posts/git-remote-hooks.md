@@ -1,6 +1,7 @@
 ---
 title: "Using server-side git hooks to auto publish blog posts"
 date: 2020-10-28T00:20:37+05:30
+description: "Setting up a server side git hook to automatically build this hugo site which is then served by nginx"
 ---
 
 Git hooks are great to automate your software development workflow. They can be
@@ -29,7 +30,7 @@ something like this:
 $ git clone git@git.prithu.xyz:website
 ```
 
-There are other ways you can set up a remote git repository - using the git or
+There are other ways you can set up a remote git repository—using the git or
 http protocols. I would suggest one reads the chapter [Git on the
 Server](https://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols) from
 the wonderful book on git - [Pro Git](https://git-scm.com/book/en/v2) to get to
