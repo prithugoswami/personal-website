@@ -17,14 +17,13 @@
     </svg>
   </a>
   <a href="https://i.prithu.xyz/resume.pdf">résumé</a> &bull;
-  <a href="/gpg.txt">gpg</a> &bull;
-  <a href="mailto:{{ .Site.Author.email }}">Email me</a> &bull;
-  <a href="https://github.com/prithugoswami/personal-website">
-    View source
-  </a>
+  <a href="https://github.com/prithugoswami">Github</a> &bull;
+  <a href="mailto:{{ .Site.Author.email }}">Email</a> &bull;
+  <a href="https://github.com/prithugoswami/personal-website">Source</a>
   </p>
 </footer>
 <script>
+  // some stinky js. will remove later
   function applyTheme(theme) {
     document.body.classList.remove("theme-auto", "theme-light", "theme-dark");
     document.body.classList.add(`theme-${theme}`);
@@ -35,13 +34,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   applyTheme(savedTheme);
 
-  for (const optionElement of document.querySelectorAll("#theme option")) {
-    optionElement.selected = savedTheme === optionElement.value;
-  }
-
-  document.querySelector("#theme").addEventListener("change", function () {
-    localStorage.setItem("theme", this.value);
-    applyTheme(this.value);
+  document.querySelector("#theme-btn").addEventListener("click", function () {
+    const theme = localStorage.getItem("theme") || "auto";
+    if (theme == "light"){
+      localStorage.setItem("theme", "dark");
+      applyTheme("dark");
+    } else if (theme == "dark") {
+      localStorage.setItem("theme", "light");
+      applyTheme("light");
+    } else {
+      if (window.matchMedia) {
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          applyTheme("light");
+          localStorage.setItem("theme", "light");
+        } else {
+          applyTheme("dark")
+          localStorage.setItem("theme", "dark");
+        }
+      }
+    }
   });
 });
 </script>

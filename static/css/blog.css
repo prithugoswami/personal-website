@@ -1,11 +1,9 @@
 @import url('https://rsms.me/inter/inter.css');
 
 .bcontainer{
-    margin-top: 2rem;
-    display: flex;
-    flex-flow: row;
+    max-width: 664px;
     width: 100%;
-    min-height: calc(100vh - 7rem - 7rem); /* 7rem footer + 7 rem nav + margin */
+    margin: 2rem auto;
     justify-content: center;
     color: var(--text-primary);
 }
@@ -32,14 +30,12 @@
 }
 
 .bcontent{
-    /* background-color: lightgreen; */
-    width: 50%;
+    max-width: 664px;
 }
 
 .bcontent h1{
-    font-family: Inter, sans-serif;
-    font-weight: 900;
-    font-size: 2.3rem;
+    font-weight: 600;
+    font-size: 1.8rem;
     line-height: 1;
     color: var(--text-primary);
     fill: var(--text-primary);
@@ -48,7 +44,7 @@
 #rss a{
     color: inherit;
     font-size: 16px;
-    font-weight: 100;
+    font-weight: 200;
 }
 
 #rss {
@@ -57,7 +53,6 @@
 
 .bcontent > .post-date{
     margin: 0.8rem 0;
-    font-family: Sans-Serif;
 }
 
 .post-labels{
@@ -69,6 +64,7 @@
 
 .post-label{
     background-color: var(--pre-bg);
+    border: 1px solid var(--pre-border);
     border-radius: 0.3rem;
     padding: 0.2rem 0.8rem;
     font-size: 0.85rem;
@@ -76,20 +72,17 @@
 }
 
 .posts{
-    font-family: Inter, sans-serif;
     list-style: none;
+    font-size: 18px;
+    font-weight: 500;
     margin-top: 1.5rem;
-    font-size: 1.18rem;
-}
-
-.posts > div:nth-child(odd){
 }
 
 .post-item{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0.7rem 0rem;
+    margin: 1rem 0;
 }
 
 .post-item > a:hover {
@@ -99,19 +92,18 @@
 .post-item > a {
     margin-right: 4rem;
     overflow: hidden;
-    font-weight: 600;
     color: var(--text-primary);
 }
 
 .post-item > .post-date{
+    color: var(--text-secondary);
     font-size: 1rem;
     line-height: 1.4;
     white-space: nowrap;
-    color: var(--text-secondary);
 }
 
 .post-text{
-    font-family: Inter, sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 16px;
     color: var(--text-primary);
 }
@@ -135,16 +127,6 @@
     border-bottom: 2px solid #B554E3aa;
 }
 
-/* .post-text a::after { */
-/*   display: inline-block; */
-/*   content: ' '; */
-/*   background-image: url('../img/ext-arrow.svg'); */
-/*   margin-left: 6px; */
-/*   /1* background-size: 28px 28px; *1/ */
-/*   height: 12px; */
-/*   width: 12px; */
-/* } */
-
 .post-text a:hover {
     color: #8a3ead;
     text-decoration: none;
@@ -160,17 +142,23 @@
 }
 
 .post-text h1{
-    font-size:1.7rem;
+    font-family: 'Exo 2';
+    font-weight: 500;
+    font-size:1.6rem;
     margin-top: 2.5rem;
 }
 
 .post-text h2{
-    font-size:1.5rem;
+    font-family: 'Exo 2';
+    font-size:1.4rem;
+    font-weight: 500;
     margin-top: 2rem;
 }
 
 .post-text h3{
-    font-size:1.3rem;
+    font-family: 'Exo 2';
+    font-weight: 500;
+    font-size:1.2rem;
     margin-top: 1.5rem;
 }
 
@@ -188,10 +176,13 @@
     background: var(--pre-bg);
     padding: 1rem;
     margin: 0.5rem 0;
-    border: 1px solid rgba(0,0,0,0.15);
+    border: 1px solid var(--pre-border);
     border-radius: 6px;
     font-size: 0.9rem;
     overflow-x: scroll;
+}
+.post-text strong {
+    font-weight: 600;
 }
 
 .post-text pre::-webkit-scrollbar {
@@ -237,15 +228,16 @@
 @media only screen and (max-width: 768px){
     .bcontent {
         width: 90%;
+        margin: 0 auto;
     }
 
-    #blist {
-        width:100%;
-    }
+    /* #blist { */
+    /*     width:100%; */
+    /* } */
 
-    #blist h1{
-        margin-left: 1rem;
-    }
+    /* #blist h1{ */
+    /*     margin-left: 1rem; */
+    /* } */
 
     .bcontainer {
         margin-top: 1rem;
@@ -253,7 +245,6 @@
 
     .post-item{
         flex-direction: column-reverse;
-        padding: 0.7rem 1rem;
     }
 
     .post-item > a {

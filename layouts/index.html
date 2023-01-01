@@ -6,129 +6,32 @@
 
   <section id="intro" class="page-section">
     <div class="container">
-      <div class="shadow-box">
-        <svg id="stripes-green" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 193.629 194.247">
-          <rect fill="#8bef89" transform="rotate(39)" rx="6" height="13" width="162" y=".709" x="7.97"/>
-          <rect fill="#8bef89" transform="rotate(39)" rx="6" height="13" width="205" y="21.612" x="64.786"/>
-          <rect fill="#8bef89" transform="rotate(39)" rx="6" height="13" width="189" y="-19.983" x="20.81"/>
-          <circle fill="#8bef89" transform="rotate(39)" r="6" cy="8.417" cx="182.777"/>
-          <circle fill="#8bef89" transform="rotate(39)" r="6" cy="28.091" cx="52.018"/>
-        </svg>
-        <svg id="stripes-purp" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160.212 167.186">
-          <rect fill="#b554e3" transform="rotate(39)" rx="6" height="13" width="162" y=".709" x="7.97"/>
-          <rect fill="#b554e3" transform="rotate(39)" rx="6" height="13" width="162" y="21.612" x="64.786"/>
-          <rect fill="#b554e3" transform="rotate(39)" rx="6" height="13" width="162" y="-19.983" x="20.81"/>
-          <circle fill="#b554e3" transform="rotate(39)" r="6" cy="8.417" cx="182.777"/>
-          <circle fill="#b554e3" transform="rotate(39)" r="6" cy="28.091" cx="52.018"/>
-        </svg>
-        <svg id="triangle" xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 128 59" preserveAspectRatio="xMidYMid meet">
-          <path d="M34 0l47 9 47 10L0 59z" />
-        </svg>
-        <svg id="circle" xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 74 74" preserveAspectRatio="xMidYMid meet">
-          <circle cx="37" cy="37" r="37" />
-        </svg>
-        <h1>Prithu Goswami</h1>
         <div id="intro-text">
-
           <p>
-          I love to build things and design solutions to problems.
-          Interested in *nix, infrastructure, cloud native, networking and info-sec. You can find
-          my resume <a href="https://i.prithu.xyz/resume.pdf">here</a>.
+          {{ .Content }} 
           </p>
-
         </div>
-        <img id="profile-pic" src="./img/duotone-profile-small.jpeg">
-        <div id="socials">
-          <a href="mailto:{{ .Site.Author.email }}">
-            <div class="sb mail">
-              <img src="/img/mail.svg">
-            </div>
-          </a>
-          <a href="https://github.com/prithugoswami" target="_blank">
-            <div class="sb github">
-              <img src="/img/github.svg">
-            </div>
-          </a>
-          <a href="https://dribbble.com/prithugoswami" target="_blank">
-            <div class="sb dribbble">
-              <img src="/img/dribbble.svg">
-            </div>
-          </a>
-          <a href="https://twitter.com/prithu524" target="_blank">
-            <div class="sb twitter">
-              <img src="/img/twitter.svg">
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div id="socials-2">
-      <a href="mailto:{{ .Site.Author.email }}">
-        <div class="sb mail">
-          <img src="/img/mail.svg">
-        </div>
-      </a>
-      <a href="https://github.com/prithugoswami" target="_blank">
-        <div class="sb github">
-          <img src="/img/github.svg">
-        </div>
-      </a>
-      <a href="https://dribbble.com/prithugoswami" target="_blank">
-        <div class="sb dribbble">
-          <img src="/img/dribbble.svg">
-        </div>
-      </a>
-      <a href="https://twitter.com/prithu524" target="_blank">
-        <div class="sb twitter">
-          <img src="/img/twitter.svg">
-        </div>
-      </a>
-    </div>
-
-  </section>
-
-  <section id=projects class="page-section">
-    <div class=container>
-      <h1>Some of my works</h1>
-      <div class="shadow-box">
-        <div class="section-text">
-          {{ range .Site.Data.projects }}
-          <div class="section-item">
-            <h2>
-              <a href="{{ .url }}">
-                {{ .title }}
-              </a>
-            </h2>
-            <p class="section-sub-text">{{ .description }}</p>
-          </div>
-          {{ end }}
-        </div>
-        <!-- <a href="/projects/"><div class=btn id=project-cta>View All</div></a> -->
-      </div>
     </div>
   </section>
-
-  <section id=writeups class="page-section">
+  <section id=latest-posts>
     <div class=container>
-      <h1>I also write about stuff</h1>
-      <div class="shadow-box">
-        <div class="section-text">
-          {{ range sort (where .Site.RegularPages "Section" "posts") "Date" "desc" | first 3}}
-          <div class=section-item>
-            <h2>
+      <h2>Latest posts</h2>
+      <div id=latest-posts-list>
+        {{ range sort (where .Site.RegularPages "Section" "posts") "Date" "desc" | first 3}}
+        <div >
+          <div>
+            <h3>
               <a href="{{ .RelPermalink }}">
                 {{ .Title }}
               </a>
-            </h2>
-            <p class="section-sub-text">{{ with .Params.description }}{{ . }}{{ else }}{{.Summary | truncate 110 }}{{ end }}</p>
-            <!-- <p>{{ .Date.Format "2 Jan 2006" }}<p> -->
+            </h3>
+            <p>{{ with .Params.description }}{{ . }}{{ else }}{{.Summary | truncate 110 }}{{ end }}</p>
           </div>
-          {{ end }}
+          <p>{{ .Date.Format "2 Jan 2006" }}</p>
         </div>
-        <a href="/posts/"><div class=btn id=writeup-cta>View All</div></a>
+        {{ end }}
       </div>
+      <a id=latest-posts-viewall href="/posts/">View All ➜</a>
     </div>
   </section>
   {{ partial "footer.html" . }}
