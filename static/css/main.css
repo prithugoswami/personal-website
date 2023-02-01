@@ -31,6 +31,7 @@ a:focus{
     --dark-logo-bottom: #eeeeee;
     --dark-pre-bg: #000000;
     --dark-pre-border: #ffffff30;
+    --dark-code-bg: #1a1a1a;
 
     --light-bg: #f3f3f3;
     --light-text: #666666;
@@ -40,8 +41,9 @@ a:focus{
     --light-card-text: #292929;
     --light-logo-top: #1a1a1a;
     --light-logo-bottom: #4d4d4d;
-    --light-pre-bg: #0000003d;
+    --light-pre-bg: #0000000f;
     --light-pre-border: #00000026;
+    --light-code-bg: #0000000f;
 }
 
 body.theme-light, body.theme-auto{
@@ -55,8 +57,10 @@ body.theme-light, body.theme-auto{
     --card-text: var(--light-card-text);
     --logo-top: var(--light-logo-top);
     --logo-bottom: var(--light-logo-bottom);
-    --pre-bg: #0000000f;
+    --pre-bg: var(--light-pre-bg);
     --pre-border: var(--light-pre-border);
+    --code-bg: var(--light-code-bg);
+    --scrollbar: #00000021;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -73,6 +77,7 @@ body.theme-light, body.theme-auto{
         --logo-bottom: var(--dark-logo-bottom);
         --pre-bg: var(--dark-pre-bg);
         --pre-border: var(--dark-pre-border);
+        --code-bg: var(--dark-code-bg);
         --scrollbar: #ffffff11;
     }
 }
@@ -90,7 +95,8 @@ body.theme-dark{
     --logo-bottom: var(--dark-logo-bottom);
     --pre-bg: var(--dark-pre-bg);
     --pre-border: var(--dark-pre-border);
-    --scrollbar: #ffffff11;
+    --code-bg: var(--dark-code-bg);
+    --scrollbar: #ffffff25;
 }
 
 body{

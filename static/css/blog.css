@@ -36,7 +36,7 @@
 .bcontent h1{
     font-weight: 600;
     font-size: 1.8rem;
-    line-height: 1;
+    line-height: 1.2;
     color: var(--text-primary);
     fill: var(--text-primary);
 }
@@ -102,6 +102,16 @@
     white-space: nowrap;
 }
 
+.footnotes ol{
+    list-style-position: inside;
+    padding-top: 1rem;
+}
+
+.footnotes li>p {
+    display: inline-block;
+    margin: 0.3rem;
+}
+
 .post-text{
     font-family: 'Inter', sans-serif;
     font-size: 16px;
@@ -124,12 +134,18 @@
 }
 
 .post-text a {
-    border-bottom: 2px solid #B554E3aa;
+    border-bottom: 2px solid #008aff80; 
 }
 
 .post-text a:hover {
-    color: #8a3ead;
+    color: #008aff;
     text-decoration: none;
+}
+
+.post-text sup {
+    border-radius: 0.25rem;
+    padding: 0.1rem 0.3rem;
+    background-color: #008aff1f;
 }
 
 .post-text figure img{
@@ -160,6 +176,12 @@
     font-weight: 500;
     font-size:1.2rem;
     margin-top: 1.5rem;
+}
+
+.post-text h4{
+    font-weight: 600;
+    font-size:1rem;
+    margin-top: 1rem;
 }
 
 .post-text ul{
@@ -198,22 +220,21 @@
   background-color: rgba(3,122,255,0.8);
 }
 
-.post-text > p > code{
+:not(pre) > code{
     font-family: monospace;
     font-size: 14px;
-    background: rgba(0,0,0,0.08);
-    border: 1px solid rgba(0,0,0,0.1);
+    background-color: var(--code-bg);
+    border: 1px solid var(--pre-border);
     padding: 0 0.3rem;
     border-radius: 0.2rem;
 }
 
-.post-text > p > a > code{
-    font-family: monospace;
-    font-size: 14px;
-    background: rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(0,0,0,0.1);
-    padding: 0 0.4rem;
-    border-radius: 0.2rem;
+.post-text ._aside {
+    border: 1px solid #008aff42;
+    border-radius: 6px;
+    background-color: #40a6ff14;
+    padding: 0.5rem 2.5rem;
+    margin-top: 1rem;
 }
 
 .post-text blockquote {
@@ -255,6 +276,10 @@
 
     .post-item > .post-date{
         margin-bottom: 0.2rem;
+    }
+
+    .post-text ._aside {
+        padding: 0.5rem 1.5rem;
     }
 
 
