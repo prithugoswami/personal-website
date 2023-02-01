@@ -342,8 +342,8 @@ One last thing to add is an UPS. The RPi was powered by an AC adapter, which is
 not ideal if you are running it as a server since power outages may cause
 uptime disruptions, even worse, disk corruptions—not something we want while
 running a server. In order to prevent that, I ordered [this
-micro-UPS](https://www.amazon.in/gp/product/B09XBBZKDC/ref=ppx_yo_dt_b_asin_title_o09_s00?ie=UTF8&th=1)
-to keep my RPi up for enough time until power came back on. This UPS has the
-correct rating (5V 3A) required for the RPi and has a capacity of 7500 mAh. The
-UPS seamlessly switches over to battery power without disrupting the Pi. It's a
-life saver and keeps the RPi up reliably during outages.
+micro-UPS](https://www.amazon.in/gp/product/B09XBBZKDC) to keep my RPi up for
+enough time until power came back on. This UPS has the correct rating (5V 3A)
+required for the RPi and has a capacity of 7500 mAh. The UPS seamlessly
+switches over to battery power without disrupting the Pi. It's a life saver and
+keeps the RPi up reliably during outages.
