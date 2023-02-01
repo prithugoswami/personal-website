@@ -1,7 +1,6 @@
 ---
 title: "RPi server behind VPS using wireguard and iptables NAT"
 date: 2023-02-01T09:23:53+05:30
-draft: true
 description: Documenting the process of setting up wireguard on a VPS and forwarding traffic to a host on the private network using iptables
 ---
 
