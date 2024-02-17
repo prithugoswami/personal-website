@@ -1,7 +1,7 @@
 @import url('https://rsms.me/inter/inter.css');
 
 .bcontainer{
-    max-width: 664px;
+    max-width: 720px;
     width: 100%;
     margin: 2rem auto;
     justify-content: center;
@@ -30,7 +30,7 @@
 }
 
 .bcontent{
-    max-width: 664px;
+    max-width: 720px;
 }
 
 .bcontent h1{
@@ -157,6 +157,10 @@
     margin: 1rem 0;
 }
 
+.post-text li{
+    line-height: 1.6;
+}
+
 .post-text h1{
     font-family: 'Exo 2';
     font-weight: 500;
@@ -235,6 +239,11 @@
     background-color: #40a6ff14;
     padding: 0.5rem 2.5rem;
     margin-top: 1rem;
+}
+
+.vid {
+    max-width: 100%;
+    height: auto;
 }
 
 .post-text blockquote {
