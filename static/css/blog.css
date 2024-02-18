@@ -177,7 +177,7 @@
     font-family: 'Exo 2';
     font-size:1.4rem;
     font-weight: 500;
-    margin-top: 2rem;
+    margin: 2rem 0;
 }
 
 .post-text h3{
@@ -212,6 +212,7 @@
     font-size: 0.9rem;
     overflow-x: scroll;
 }
+
 .post-text strong {
     font-weight: 600;
 }

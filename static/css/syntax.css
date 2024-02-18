@@ -1,5 +1,5 @@
 /* Background */ .bg { color: #e6edf3; background-color: #0d1117; }
-/* PreWrapper */ .post-text .chroma { color: #e6edf3; background-color: #0d1117; }
+/* PreWrapper */ .post-text .chroma { color: #e6edf3; background-color: #0f0f0f; }
 /* Other */ .chroma .x {  }
 /* Error */ .chroma .err { color: #f85149 }
 /* CodeLine */ .chroma .cl {  }
@@ -40,7 +40,7 @@
 /* NameVariableMagic */ .chroma .vm {  }
 /* Literal */ .chroma .l { color: #a5d6ff }
 /* LiteralDate */ .chroma .ld { color: #79c0ff }
-/* LiteralString */ .chroma .s { color: #ffcec9 }
+/* LiteralString */ .chroma .s { color: #b5d5f0 }
 /* LiteralStringAffix */ .chroma .sa { color: #79c0ff }
 /* LiteralStringBacktick */ .chroma .sb { color: #a5d6ff }
 /* LiteralStringChar */ .chroma .sc { color: #a5d6ff }
