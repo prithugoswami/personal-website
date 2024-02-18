@@ -6,7 +6,7 @@ description: "Going through the source code of dwm written in C and debugging it
 
 I use [dwm](https://dwm.suckless.org) as my window manager and I always wanted
 to hack on it since I started using it. This post is just going to be a lot of
-snippets from dwm source code with my explanatiion on it as I understand it
+snippets from dwm source code with my explanation on it as I understand it
 myself and sharing what I learnt while debugging dwm along the way. I wanted to
 fix an annoying issue I was facing with dwm and through this post I want to
 document the process of how I fixed it. It's also a reason for me to practice
@@ -76,7 +76,7 @@ main(int argc, char *argv[])
 
 Starting from the `main()` function We see some argument checks, a check if we can even open the X display, a check for another wm running, etc. Then some function calls: 
 - `setup()` - sets up things for dwm to start as an X client itself, defining window attributes for itself, creating a window and bunch of other things.
-- `scan()` - Scans the X server for all windows there are. It goes through every window using the [`XQueryTree()`](https://tronche.com/gui/x/xlib/window-information/XQueryTree.html) function and calls [`manage()`](#the-manage-function) for each window it finds. This is when I skim through `manage()` a little. It seems to me in the first read that this function is actually responsible for "registering" an X window as a "client" of dwm. Ok, we'll come back to this later.
+- `scan()` - Scans the X server for all windows there are. It goes through every window using the [`XQueryTree()`](https://tronche.com/gui/x/xlib/window-information/XQueryTree.html) function and calls [`manage()`](#the-manage-function) for each window it finds. This is when I skim through `manage()` a little. It seems to me in the first read that this function is actually responsible for "registering" an X window as a "client" of dwm. OK, we'll come back to this later.
 - `run()` - function which is nice and small and has the main event loop. Let's explore this further keeping in mind we want to find out how dwm handles new windows being spawned:
 
 
@@ -229,7 +229,7 @@ struct Client {
 There's `selmon` and `mons` global static variables that live throughout the
 life-cycle of the program. They are one of the main variables of the program.
 `selmon` points to the current selected monitor and `mons` points to the first
-monitor. Ech monitor points to the next monitor in a linked list fashion.
+monitor. Each monitor points to the next monitor in a linked list fashion.
 
 
 {{< /aside >}}
@@ -373,7 +373,7 @@ $3 = 33
 
 
 
-And yes, indeed we do see the value 33 (0b100001) which means that the client is on the scratchpad tag (0b100000) and tag 1 (0b000001). Now to find out why does that happen even though we have the line `selmon->tagset[selmon->seltags] &= ~scratchtag;` as a failsafe which makes sure we don't spawn any windows in the scratch tag? Well this is where stepping through the code line by line will help. We need to  check the value of `c->tags` and what changes it during the run.
+And yes, indeed we do see the value 33 (0b100001) which means that the client is on the scratchpad tag (0b100000) and tag 1 (0b000001). Now to find out why does that happen even though we have the line `selmon->tagset[selmon->seltags] &= ~scratchtag;` as a fail safe which makes sure we don't spawn any windows in the scratch tag? Well this is where stepping through the code line by line will help. We need to  check the value of `c->tags` and what changes it during the run.
 
 ### debugging manage()
 
@@ -411,7 +411,7 @@ Breakpoint 1, manage (w=6291463, wa=0x555555564020 <wa>) at dwm.c:1306
 1306            c = ecalloc(1, sizeof(Client));
 (gdb) n
 ```
-The second breakpoint is hit when I run `eog ~/pictures/somepic.jpg &`. This is when the image viwer window is created. The first line (1306) simply allocates space for the new client.
+The second breakpoint is hit when I run `eog ~/pictures/somepic.jpg &`. This is when the image viewer window is created. The first line (1306) simply allocates space for the new client.
 ```
 (gdb) display c->name
 1: c->name = '\000' <repeats 255 times>
@@ -445,7 +445,7 @@ I use the `display` command here (Which I learnt in this process) to always prin
 2: c->tags = 0
 3: selmon->tagset = {33, 2}
 ```
-In the above lines, the client gets assigned a few attributes like window position, height and width from the XWindowAttributes
+In the above lines, the client gets assigned a few attributes like window position, height and width from the `XWindowAttributes`
 ```
 (gdb) n
 1315            updatetitle(c);
@@ -512,7 +512,7 @@ After the `updatetitle(c)` we see that the name of the client changed. `updateti
 ```
 
 We don't enter the scratchpad loop because this isn't a scratchpad window—it's the
-eog image viewer. The line `selmon->tagset[selmon->seltags] &= ~scratchtag` is
+ image viewer. The line `selmon->tagset[selmon->seltags] &= ~scratchtag` is
 too late. The client has already been assigned the scratchpad tag.
 
 ```
@@ -570,7 +570,7 @@ applyrules(Client *c)
 ```
 
 
-`applyrules()` does some rule matching which is a feature that comes default in dwm config, where you can specify rules for specific windows. For example, let's say you wanted the Gimp Window to always open in tag 2—that sort of thing. We don't have any rules setup for the eog file viewer so this shouldn't affect it? Right? But, in `applyrules(c)` we see that `c->tags` is actually set to 0 first and then at the very end (after gone through the rules), it actually sets the tags if `c->tags` isn't already set by any of rules. The line `c->tags = c->tags & TAGMASK ? c->tags & TAGMASK : c->mon->tagset[c->mon->seltags];` reads "If there are no tags set yet for this client, then set them to the same tagset the client's monitor has" so the client's tags equal `c->mon->tagset[c->mon->seltags]` and we know that `c->mon` is `selmon` from the caller function just before the call to `applyrules()`— `c->mon = selmon`. There's our problem!
+`applyrules()` does some rule matching which is a feature that comes default in dwm config, where you can specify rules for specific windows. For example, let's say you wanted the Gimp Window to always open in tag 2—that sort of thing. I don't have any rules setup for the eog file viewer so this shouldn't affect it? Right? But, in `applyrules(c)` we see that `c->tags` is actually set to 0 first and then at the very end (after gone through the rules), it actually sets the tags if `c->tags` isn't already set by any of rules. The line `c->tags = c->tags & TAGMASK ? c->tags & TAGMASK : c->mon->tagset[c->mon->seltags];` reads "If there are no tags set yet for this client, then set them to the same tagset the client's monitor has" so the client's tags equal `c->mon->tagset[c->mon->seltags]` and we know that `c->mon` is `selmon` from the caller function just before the call to `applyrules()`— `c->mon = selmon`. There's our problem!
 
 ## The solution
 
