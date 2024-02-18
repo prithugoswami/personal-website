@@ -16,7 +16,7 @@ a:focus{
 }
 
 ::selection {
-    background-color: var(--text);
+    background-color: #008aff;
     color: var(--bg);
 }
 

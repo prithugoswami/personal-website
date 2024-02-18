@@ -1,7 +1,8 @@
 @import url('https://rsms.me/inter/inter.css');
+@import url('syntax.css');
 
 .bcontainer{
-    max-width: 720px;
+    max-width: 664px;
     width: 100%;
     margin: 2rem auto;
     justify-content: center;
@@ -134,7 +135,11 @@
 }
 
 .post-text a {
-    border-bottom: 2px solid #008aff80; 
+    border-bottom: 2.7px solid #008aff80; 
+}
+
+.post-text a code {
+    border-bottom: 1.7px solid #008aff80; 
 }
 
 .post-text a:hover {

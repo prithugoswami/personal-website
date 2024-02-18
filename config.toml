@@ -6,3 +6,8 @@ title = "Prithu Goswami"
 [author]
     name = "Prithu Goswami"
     email = "prithu@prithu.dev"
+
+[markup]
+    [markup.highlight]
+        noClasses = false
+
