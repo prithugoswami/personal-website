@@ -1,7 +1,6 @@
 ---
 title: "Debugging dwm to fix an annoying bug"
 date: 2024-02-17T18:19:23+05:30
-draft: true
 description: "Going through the source code of dwm written in C and debugging it using gdb to fix an annoying issue."
 ---
 
@@ -9,8 +8,9 @@ I use [dwm](https://dwm.suckless.org) as my window manager and I always wanted
 to hack on it since I started using it. This post is just going to be a lot of
 snippets from dwm source code with my explanatiion on it as I understand it
 myself and sharing what I learnt while debugging dwm along the way. I wanted to
-fix an annoying issue I was facing with dwm and this blog post serves as a
-documentation of how I fixed it. It's also a reason to practice my writing.
+fix an annoying issue I was facing with dwm and through this post I want to
+document the process of how I fixed it. It's also a reason for me to practice
+writing.
 
 The annoying issue that I was facing with my dwm setup was related to a scratchpad patch. I use a scratchpad terminal using the [scratchpad patch](https://dwm.suckless.org/patches/scratchpad/) which gives me an extra tag called the scratchpad tag where I can have a floating terminal window wherever I want.
 
@@ -19,7 +19,7 @@ Like this:
 
 {{< video src="https://m.prithu.dev/dwm-debug-1-scratchpad-demo.mp4" type="video/mp4" loop=true autoplay=true >}}
 
-I usually have [nnn](https://github.com/jarun/nnn) running in a tmux window (I usually
+I have [nnn](https://github.com/jarun/nnn) running in a tmux window (I usually
 have a tmux session called `scratchpad` for this) which let's me quickly browse and open
 files. I also have other tmux windows for quick commands or to note down
 something.
@@ -28,13 +28,13 @@ something.
 
 ### A little about dwm tags
 
-DWM has the concept of "tags" and not workspaces. Those numbers on the top-left are tags. A window can be part of one or more tags. It's a little confussing when coming from other window managers, but this concept makes sense when you start using it. Example, let's say I have  a browser window on tag 2 and 4, so when I move from 2 to 4 the browser window appears on both the tags. DWM also allows you look at two tags at the same time. Which means all the windows in tag 2 and 4 appear at the same time. Might seem very weird for someone coming from another window manager where the numbers usually represent a workspace, but tags are different than workspaces.
+DWM has the concept of "tags" and not workspaces. Those numbers on the top-left are tags. A window can be part of one or more tags. It's a little confusing when coming from other window managers, where the numbers represent workspaces, but this concept makes sense once you start using it. For example, let's say I have  a browser window on tag 2 and 4, so when I move from 2 to 4 the browser window appears on both the tags. DWM also allows you to look at two tags at the same time. Which means all the windows in tag 2 and 4 appear together on a single screen.
 
 {{< /aside >}}
 
 ## The Problem
 
-Now, the problem is when I launch programs from the `scratchpad`, they stick around in the scratchpad tag too, which shouldn't happen. This means that the video player window has the tags `1` and `6` set (6 is the internal number for the scratch tag). Now when I move to another tag, `2`. (Note: there is no such thing as "moving" to another tab, just that you set a tag visible or invisible) and open the scratchpad there (make `scratch` tag visible) the video player appears there as well. This is pretty annoying. The expected behaviour for me is I want the scratchpad to launch GUI applications on the tag "behind" the scratchpad (i.e the other tag that is visible along with the scratchpad) and not in the scratchtag itself.
+Now, the problem is when I launch programs from the `scratchpad` (say a video player), they stick around in the scratchpad tag too, which shouldn't happen. This means that the video player window has the tags `1` and `6` set (6 is the internal number for the scratch tag). Now when I move to another tag, say `2` (Note: there is no such thing as "moving" to another tab, just that you set a tag visible or invisible) and open the scratchpad there (make `scratch` tag visible) the video player appears there as well. This is pretty annoying. The expected behaviour for me is I want the scratchpad to launch GUI applications on the tag "behind" the scratchpad (i.e the other tag that is visible along with the scratchpad) and not in the scratchtag itself.
 
 Here's a video of the problem (You can see how frustrated I am by the chaotic mouse movement at the end):
 
@@ -74,10 +74,10 @@ main(int argc, char *argv[])
 
 ```
 
-Starting from the `main()` function We see some argument checks, check if we can open the X display, check for another wm running, etc. Then some function calls: 
-- `setup()` - sets up things for dwm like initializing the Monitors (an important struct, I'll touch later) and allocating space for some other variables.
+Starting from the `main()` function We see some argument checks, a check if we can even open the X display, a check for another wm running, etc. Then some function calls: 
+- `setup()` - sets up things for dwm to start as an X client itself, defining window attributes for itself, creating a window and bunch of other things.
 - `scan()` - Scans the X server for all windows there are. It goes through every window using the [`XQueryTree()`](https://tronche.com/gui/x/xlib/window-information/XQueryTree.html) function and calls [`manage()`](#the-manage-function) for each window it finds. This is when I skim through `manage()` a little. It seems to me in the first read that this function is actually responsible for "registering" an X window as a "client" of dwm. Ok, we'll come back to this later.
-- `run()` - function which is nice and small and has the main event loop. Let's explore this further:
+- `run()` - function which is nice and small and has the main event loop. Let's explore this further keeping in mind we want to find out how dwm handles new windows being spawned:
 
 
 ```c
@@ -94,7 +94,7 @@ run(void)
   ``` 
 
 
-`handler` is an array of function pointers that maps an XEvent type (an int) to a function that handles an [`XEvent`](https://tronche.com/gui/x/xlib/events/structures.html) of that type.
+`handler` is an array of function pointers that maps an XEvent type (an int) to a function that handles an [`XEvent`](https://tronche.com/gui/x/xlib/events/structures.html) of that type. This is when I started reading a bit more about [X](https://x.org) and [Xlib](https://tronche.com/gui/x/xlib/).
 ``` c
 static void (*handler[LASTEvent]) (XEvent *) = {
 	[ButtonPress] = buttonpress,
@@ -115,7 +115,7 @@ static void (*handler[LASTEvent]) (XEvent *) = {
 };
 
 ```
-To me, the ones that seemed of interest were `Expose`, `MappingNotify`, `MapRequest`. Now I started to read about the different [XEvents](https://tronche.com/gui/x/xlib/events/types.html). `Expose` is an event produced when a part of window is visible. `MappingNotify` seems like something related to keyboard/pointer mapping, which is unrelated to windows spawning. At this point I had read a little about how one creates a window and "maps" it in X. X refers to Mapping a window as the actual process of drawing it on the screen. You can create a window, but not displayed yet. A call to `XMapWindow()` is what makes the window visible on the screen. From the [docs](https://tronche.com/gui/x/xlib/window/XCreateWindow.html) of `XCreateWindow()`:
+To me, the ones that seemed of interest were `Expose`, `MappingNotify`, `MapRequest`. I looked up what each of them meant from the docs - [XEvents](https://tronche.com/gui/x/xlib/events/types.html). `Expose` is an event produced when a part of window is visible. `MappingNotify` seems like something related to keyboard/pointer mapping, which is unrelated to windows spawning. At this point I had read a little about how one creates a window and "maps" it in X. X refers to Mapping a window as the actual process of drawing it on the screen. You can create a window, but not displayed yet. A call to `XMapWindow()` is what makes the window visible on the screen. From the [docs](https://tronche.com/gui/x/xlib/window/XCreateWindow.html) of `XCreateWindow()`:
 
 > The created window is not yet displayed (mapped) on the user's display. To display the window, call XMapWindow().
 
@@ -315,7 +315,7 @@ A `tagset` is an int set that uses an unsigned int and represents a set of the c
 
 ```
 Only if the new window has a title of "scratchpad" (value of `scratchpadname`) do we allow it to have the scratchpad tag.
-By removing the scratchpad tag before a new window is being mapped (wants to be displayed), the patch author made sure that the scratchtag is is not active when a new window comes in as we don't want any other window in the scrathtag other than the one that's named "scratchpad". It seems like the purpose of that line is exactly to prevent the problem I am facing—to have a window spawn in the scratch tag when the scratchtag is active—why then does that still happen?
+By removing the scratchpad tag before a new window is being mapped (wants to be displayed), the patch author made sure that the scratchtag is is not active when a new window comes in as we don't want any other window in the scrathtag other than the one that's named "scratchpad". It seems like the purpose of that line is exactly to prevent the problem I am facing—having a window spawn in the scratch tag when the scratchtag is active—why then does that still happen?
 
 Now, this is a big function and you can understand only so much by just reading the code. We need to be able to debug it and be able to step over the code as dwm runs to learn more about what it does.
 
