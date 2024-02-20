@@ -5,12 +5,13 @@ description: "Going through the source code of dwm written in C and debugging it
 ---
 
 I use [dwm](https://dwm.suckless.org) as my window manager and I always wanted
-to hack on it since I started using it. This post is just going to be a lot of
-snippets from dwm source code with my explanation on it as I understand it
-myself and sharing what I learnt while debugging dwm along the way. I wanted to
-fix an annoying issue I was facing with dwm and through this post I want to
-document the process of how I fixed it. It's also a reason for me to practice
-writing.
+to hack on it ever since I started using it and I have taken my first step
+towards that by debugging it and understanding the codebase a little. This post is
+just going to be a lot of snippets from dwm source code with my explanation on
+it as I understand it myself and sharing what I learnt while debugging dwm
+along the way. I wanted to fix an annoying issue I was facing with dwm and
+through this post I want to document the process of how I fixed it. It's also a
+reason for me to practice writing.
 
 The annoying issue that I was facing with my dwm setup was related to a scratchpad patch. I use a scratchpad terminal using the [scratchpad patch](https://dwm.suckless.org/patches/scratchpad/) which gives me an extra tag called the scratchpad tag where I can have a floating terminal window wherever I want.
 
