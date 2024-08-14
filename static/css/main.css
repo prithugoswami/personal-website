@@ -12,7 +12,7 @@ a:active,
 a:focus{
     outline: none;
     text-decoration: none;
-    color: var(--text-primary);
+    color: var(--text);
 }
 
 ::selection {
@@ -22,7 +22,7 @@ a:focus{
 
 :root{
     --dark-bg: #0a0a0a;
-    --dark-text: #c5c5c5;
+    --dark-text: #ffffffcc;
     --dark-text-primary: white;
     --dark-card-bg: #242424;
     --dark-card-head: white;
@@ -34,7 +34,7 @@ a:focus{
     --dark-code-bg: #1a1a1a;
 
     --light-bg: #f3f3f3;
-    --light-text: #666666;
+    --light-text: #1a1a1a;
     --light-text-primary: black;
     --light-card-bg: white;
     --light-card-head: #333333;
@@ -67,8 +67,8 @@ body.theme-light, body.theme-auto{
     body.theme-auto{
         --bg: var(--dark-bg);
         --text: var(--dark-text);
+        --text-primary: var(--dark-text-primary);
         --text-secondary: #919191;
-        --text-primary: #ffffffcc;
         --quote-bar: #ffffff61;
         --card-bg: var(--dark-card-bg);
         --card-head: var(--dark-card-head);
@@ -85,8 +85,8 @@ body.theme-light, body.theme-auto{
 body.theme-dark{
     --bg: var(--dark-bg);
     --text: var(--dark-text);
+    --text-primary: var(--dark-text-primary);
     --text-secondary: #919191;
-    --text-primary: #ffffffcc;
     --quote-bar: #ffffff61;
     --card-bg: var(--dark-card-bg);
     --card-head: var(--dark-card-head);
@@ -96,7 +96,7 @@ body.theme-dark{
     --pre-bg: var(--dark-pre-bg);
     --pre-border: var(--dark-pre-border);
     --code-bg: var(--dark-code-bg);
-    --scrollbar: #ffffff25;
+    --scrollbar: #ffffff11;
 }
 
 body{
@@ -137,7 +137,7 @@ nav select {
     text-decoration: none;
     text-transform: uppercase;
     background: none;
-    color: var(--text-primary);
+    color: var(--text);
     font-family: monospace;
     font-size: inherit;
     font-weight: 700;
@@ -147,7 +147,7 @@ nav select {
 #sun {
     width: 24px;
     margin-top: 6px;
-    fill: var(--text-primary);
+    fill: var(--text);
     cursor: pointer;
 }
 
@@ -170,13 +170,13 @@ nav select {
 
 nav a{
     text-decoration: none;
-    color: var(--text-primary);
+    color: var(--text);
     font-weight: 500;
 }
 
 nav a:hover{
     text-decoration: underline;
-    color: var(--text-primary);
+    color: var(--text);
     font-weight: 500;
 }
 
@@ -185,12 +185,12 @@ nav a:hover{
 }
 
 #latest-posts {
-    color: var(--text-primary);
+    color: var(--text);
 }
 
 #latest-posts a:hover{
     text-decoration: underline;
-    color: var(--text-primary);
+    color: var(--text);
 }
 
 #latest-posts-viewall {

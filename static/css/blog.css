@@ -6,7 +6,7 @@
     width: 100%;
     margin: 2rem auto;
     justify-content: center;
-    color: var(--text-primary);
+    color: var(--text);
 }
 
 .blog-menu{
@@ -93,7 +93,7 @@
 .post-item > a {
     margin-right: 4rem;
     overflow: hidden;
-    color: var(--text-primary);
+    color: var(--text);
 }
 
 .post-item > .post-date{
@@ -116,7 +116,7 @@
 .post-text{
     font-family: 'Inter', sans-serif;
     font-size: 16px;
-    color: var(--text-primary);
+    color: var(--text);
 }
 
 
@@ -178,6 +178,7 @@
     font-size:1.4rem;
     font-weight: 500;
     margin: 2rem 0;
+    color: var(--text-primary);
 }
 
 .post-text h3{
@@ -185,12 +186,14 @@
     font-weight: 500;
     font-size:1.2rem;
     margin-top: 1.5rem;
+    color: var(--text-primary);
 }
 
 .post-text h4{
     font-weight: 600;
     font-size:1rem;
     margin-top: 1rem;
+    color: var(--text-primary);
 }
 
 .post-text ul{
@@ -245,6 +248,13 @@
     background-color: #40a6ff14;
     padding: 0.5rem 2.5rem;
     margin-top: 1rem;
+}
+
+.post-text ._aside h1,
+.post-text ._aside h2,
+.post-text ._aside h3,
+.post-text ._aside h4 {
+    color: var(--text)
 }
 
 .vid {
