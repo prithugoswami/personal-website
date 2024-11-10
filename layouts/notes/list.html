@@ -1,0 +1,14 @@
+{{ partial "head.html" . }}
+<body class=theme-auto>
+  {{ partial "nav.html" }}
+  <div class="container">
+    {{ range .Pages.ByDate.Reverse }}
+    <div>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </div>
+    {{ $time := time (delimit (first 3 (strings.Split .File.BaseFileName "-")) "-") }}
+    {{ end }}
+  </div>
+</body>
+{{ partial "footer.html" . }}
+</html>
