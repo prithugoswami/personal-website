@@ -3,9 +3,10 @@ languageCode = "en-us"
 title = "Prithu Goswami"
 #ignoreFiles = [ "snippets" ]
 
-[author]
-    name = "Prithu Goswami"
-    email = "prithu@prithu.dev"
+[params]
+    [params.author]
+        name = "Prithu Goswami"
+        email = "prithu@prithu.dev"
 
 [markup]
     [markup.highlight]
