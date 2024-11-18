@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: var(--text)
 }
 a,
 a:active,
@@ -13,6 +14,9 @@ a:focus{
     outline: none;
     text-decoration: none;
     color: var(--text);
+}
+a:hover{
+    text-decoration: underline;
 }
 
 ::selection {
@@ -103,6 +107,20 @@ body{
     background-color: var(--bg);
     font-family: Inter, sans-serif;
 }
+
+.vert-scroller::-webkit-scrollbar {
+    width: 4px;
+}
+
+.vert-scroller::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar);
+  border-radius: 20px;
+}
+
+.vert-scroller::-webkit-scrollbar-thumb:active {
+  background-color: rgba(3,122,255,0.8);
+}
+
 
 nav {
     font-family: Inter;
@@ -280,6 +298,14 @@ footer p a{
     max-width: 664px;
 }
 
+.sidebar-layout-container{
+  display: flex;
+}
+
+.sidebar-layout-main-content {
+  width: 664px;
+}
+
 .shadow-box{
     background-color: var(--card-bg);
     border-radius: 24px;
@@ -328,7 +354,7 @@ footer p a{
     text-shadow: 0 4px 7px rgba(0,0,0,0.2);
 }
 
-#intro-text{
+.intro-text{
     color: var(--card-text);
     padding: 1rem 1.9rem;
     font-family: 'Inter', sans-serif;
@@ -340,8 +366,30 @@ footer p a{
     margin: 0 auto;
 }
 
-#intro-text p {
-    margin-bottom: 0.9rem;
+.intro-text p {
+    margin: 0.9rem 0rem;
+}
+
+#notes-list > div {
+  display: flex;
+  justify-content: space-between;
+  margin: 16px 0;
+}
+
+.tag-group {
+  display:flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+
+}
+
+.tag-group span{
+  font-size: 14px;
+  border: 1px;
+  background-color: var(--card-bg);
+  padding: 4px 12px;
+  border-radius: 36px;
 }
 
 .joke {

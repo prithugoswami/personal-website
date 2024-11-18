@@ -1,0 +1,6 @@
+{{- $pages :=.Pages }}
+{{- $out := slice }}
+{{- range $pages }}
+{{- $out = $out | append (dict "title" .Title "slug" .Params.slug "tags" .Params.tags "path" .RelPermalink ) }}
+{{- end }}
+{{- $out | jsonify}}
