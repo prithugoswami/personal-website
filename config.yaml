@@ -1,14 +1,22 @@
-baseURL = "https://prithu.dev/"
-languageCode = "en-us"
-title = "Prithu Goswami"
+baseURL: "https://prithu.dev/"
+languageCode: "en-us"
+title: "Prithu Goswami"
 #ignoreFiles = [ "snippets" ]
 
-[params]
-    [params.author]
-        name = "Prithu Goswami"
-        email = "prithu@prithu.dev"
+params:
+  author:
+    name: "Prithu Goswami"
+    email: "prithu@prithu.dev"
 
-[markup]
-    [markup.highlight]
-        noClasses = false
+markup:
+  highlight:
+    noClasses: false
 
+outputs:
+  section:
+  - json
+  - html
+  page:
+  - html
+  - json
+  
