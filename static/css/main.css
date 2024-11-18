@@ -109,7 +109,12 @@ body{
 }
 
 .vert-scroller::-webkit-scrollbar {
-    width: 4px;
+    margin-left:12px;
+    width: 6px;
+}
+
+.vert-scroller:hover::-webkit-scrollbar-thumb {
+  background-color: rgb(from var(--scrollbar) r g b / 0.2);
 }
 
 .vert-scroller::-webkit-scrollbar-thumb {

@@ -1,7 +1,7 @@
 {{ partial "head.html" . }}
 <body class=theme-auto>
   {{ partial "nav.html" }}
-  <link rel='stylesheet' href='/assets/index.8VHAMXS9.css'>
+  <link rel='stylesheet' href='/assets/index.A6XBIHTH.css'>
   <div id="_search_app_placeholder"></div>
   <div id="_search_app_target" class="container" style="margin-top: 2rem">
     <h2 style="
@@ -11,11 +11,16 @@
       font-weight: 600;
       ">Notes</h2>
     <div style="margin-bottom:2rem" class="intro-text">
-      <p>
-      This is a place for my notes. Things that are not really post worthy but
-      are worth saving and sharing. Things like “How to configure nginx to
-      forward subpath be proxied by an http app correctly” or “How to install nixos on an
-      oracle cloud vps”, and other useful tidbits.
+      <p class=post-text>
+
+      A place for my notes&mdash;things that are not really post worthy but are
+      worth saving. These are things that would answer a question, for example,
+      "how do I rewrite urls for proxying an http app using nginx
+      again?"<sup><a href="./nginx-reverse-proxy-and-url-rewrite">1</a></sup>
+      or “how did I install nixos on a oracle cloud vps last time?”<sup><a
+      href="./installing-nixos-on-oracle-cloud-arm-instance">2</a></sup>
+      Also, TILs and other usueful tidbits
+
       </p>
     </div>
     <div id=notes-list>
@@ -31,7 +36,7 @@
       {{ end }}
     </div>
   </div>
-  <script type="module" src='/assets/main.JW6RWPDQ.js'></script>
+  <script type="module" src='/assets/main.BIZG5WZ2.js'></script>
 </body>
 {{ partial "footer.html" . }}
 </html>
