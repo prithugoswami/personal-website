@@ -4,7 +4,7 @@ default: build-hugo
 
 build-imba:
 	cd imba/note-search && \
-	npm ci && \
+	npm install && \
 	npm run build && \
 	cp -r dist/assets ../../static/ && \
 	ls dist/assets/*js | xargs basename | xargs -I{} sed -i s/main.*\.js/{}/ ../../layouts/notes/list.html && \
