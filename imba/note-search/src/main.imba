@@ -1,4 +1,6 @@
 import search from './assets/img/search.svg'
+import '../../../static/css/main.css'
+import '../../../static/css/blog.css'
 
 def fetchNote slug
 	let res = await window.fetch("./{slug}/index.json")
@@ -28,9 +30,9 @@ tag note-item
 
 	css
 		a@hover text-decoration: underline
-		a c:warm3
+		a c: $text
 			fw.active: 600
-			c.active: white
+			c.active: $text-primary
 	<self>
 		<a route-to="/notes/{note.url.split('/').slice(-2,-1)}"> note.title
 
@@ -41,15 +43,16 @@ tag app
 	searchQuery
 	css d:flex jc:center x:-180px
 
-	css .left d:vflex ai:left jc:start gap:2 w:296px mr:16 max-height:calc(100vh - 36px - 112px) pos:sticky top: 36px
+	css .left d:vflex ai:left jc:start gap:2 w:296px mr:16 max-height:calc(100vh - 96px - 112px) pos:sticky top: 96px
 	css .note-list ofy:scroll
 		overscroll-behavior: none
 
 	css .center w:664px
 
 	css
-		input bgc:transparent outline:none bd:none c:white/80 p:0 w:100% 
-		.searchbar bgc:white/15 bd:none d:hflex px:4 py:1 rd:3 gap:2 mb:2
+		input bgc:transparent outline:none bd:none c:$text p:0 w:100% 
+		.searchbar bgc:$card-bg d:hflex px:4 py:1 rd:3 gap:2 mb:2
+			olc:$imba-searchbar-outline-color olw:$imba-searchbar-outline-width ols:$imba-searchbar-outline-style
 		.center h2 mb:4
 
 	def setup
@@ -69,7 +72,7 @@ tag app
 	<self>
 		<div.left>
 			<div.searchbar>
-				<svg src=search width=18px>
+				<svg src=search width=18px [fill:$text]>
 				<input bind=searchQuery>
 			<div.note-list.vert-scroller @scroll.log("c")>
 				for note in notes

@@ -64,7 +64,11 @@ body.theme-light, body.theme-auto{
     --pre-bg: var(--light-pre-bg);
     --pre-border: var(--light-pre-border);
     --code-bg: var(--light-code-bg);
-    --scrollbar: #00000021;
+    --scrollbar: #00000011;
+
+    --imba-searchbar-outline-width: 1px;
+    --imba-searchbar-outline-style: solid;
+    --imba-searchbar-outline-color: #00000022;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -83,6 +87,7 @@ body.theme-light, body.theme-auto{
         --pre-border: var(--dark-pre-border);
         --code-bg: var(--dark-code-bg);
         --scrollbar: #ffffff11;
+        --imba-searchbar-outline-style: none;
     }
 }
 
@@ -101,6 +106,8 @@ body.theme-dark{
     --pre-border: var(--dark-pre-border);
     --code-bg: var(--dark-code-bg);
     --scrollbar: #ffffff11;
+
+    --imba-searchbar-outline-style: none;
 }
 
 body{
