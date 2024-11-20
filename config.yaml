@@ -1,0 +1,22 @@
+baseURL: "https://prithu.dev/"
+languageCode: "en-us"
+title: "Prithu Goswami"
+#ignoreFiles = [ "snippets" ]
+
+params:
+  author:
+    name: "Prithu Goswami"
+    email: "prithu@prithu.dev"
+
+markup:
+  highlight:
+    noClasses: false
+
+outputs:
+  section:
+  - json
+  - html
+  page:
+  - html
+  - json
+  

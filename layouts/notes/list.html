@@ -1,0 +1,42 @@
+{{ partial "head.html" . }}
+<body class=theme-auto>
+  {{ partial "nav.html" }}
+  <link rel='stylesheet' href='/assets/index.REPLACED.css'>
+  <div id="_search_app_placeholder"></div>
+  <div id="_search_app_target" class="container" style="margin-top: 2rem">
+    <h2 style="
+      margin-bottom:1rem;
+      font-size:1.8rem;
+      color: var(--text-primary);
+      font-weight: 600;
+      ">Notes</h2>
+    <div style="margin-bottom:2rem" class="intro-text">
+      <p class=post-text>
+
+      A place for my notes&mdash;things that are not really post worthy but are
+      worth saving. These are things that would answer a question, for example,
+      "how do I rewrite urls for proxying an http app using nginx
+      again?"<sup><a href="./nginx-reverse-proxy-and-url-rewrite">1</a></sup>
+      or “how did I install nixos on a oracle cloud vps last time?”<sup><a
+      href="./installing-nixos-on-oracle-cloud-arm-instance">2</a></sup>
+      Also, TILs and other usueful tidbits
+
+      </p>
+    </div>
+    <div id=notes-list>
+      {{ range .Pages.ByDate.Reverse }}
+      <div>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <div class=tag-group>
+            {{ range .Params.tags }}
+              <span>{{ . }}</span>
+            {{ end }}
+          </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  <script type="module" src='/assets/main.REPLACED.js'></script>
+</body>
+{{ partial "footer.html" . }}
+</html>

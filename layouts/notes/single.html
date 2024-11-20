@@ -1,0 +1,21 @@
+{{ partial "head.html" . }}
+<body class="theme-auto">
+  {{ partial "nav.html" }}
+  <div class="bcontainer" style="max-width:720px">
+    <div class="bcontent">
+      <h1>{{ .Title }}</h1>
+      <p class="post-date">{{ .Date.Format "02 January, 2006" }}</p>
+      <div class="post-labels">
+        {{ range .Params.tags }}
+        <div class=post-label>{{ . }}</div>
+        {{ end }}
+      </div>
+      <div class="post-text">
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
+  {{ partial "footer.html" . }}
+</body>
+</html>
+

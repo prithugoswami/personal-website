@@ -1,0 +1,11 @@
+{
+  "name": "search-notes",
+  "scripts": {
+    "dev": "imba -w index.html",
+    "build": "imba build index.html",
+    "preview": "npx vite preview"
+  },
+  "devDependencies": {
+    "imba": "^2.0.0-alpha.237"
+  }
+}
