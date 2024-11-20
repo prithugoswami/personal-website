@@ -88,7 +88,7 @@ tag app
 			<div.searchbar>
 				<svg src=search width=18px [fill:$text]>
 				<input bind=searchQuery>
-			<div.note-list.vert-scroller @scroll.log("c")>
+			<div.note-list.vert-scroller>
 				for note in notes
 					if !searchQuery
 						<note-item note=note>
