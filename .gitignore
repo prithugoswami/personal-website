@@ -1,2 +1,5 @@
 /public/
 /.hugo_build.lock
+
+# imba built assets
+/static/assets
