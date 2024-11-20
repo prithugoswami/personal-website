@@ -96,7 +96,7 @@ tag app
 						<note-item note=note> if fuzzyMatch(searchQuery, note.title)
 		<div.center>
 			<div route="/notes/">
-				<h2[c:$primary-text]> "Notes"
+				<h2[c:$text-primary]> "Notes"
 				introBox
 			<note-content route="/notes/:slug">
 
