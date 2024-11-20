@@ -63,7 +63,7 @@ tag app
 		str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 	def fuzzyMatch(query, string)
-		pattern = query.split(' ').map(do(l) "{escapeRegExp(l)}").join("|");
+		pattern = query.trim().split(' ').map(do(l) "{escapeRegExp(l)}").join("|");
 		console.log(pattern)
 		const re = new RegExp(pattern, "i")
 		return re.test(string)
