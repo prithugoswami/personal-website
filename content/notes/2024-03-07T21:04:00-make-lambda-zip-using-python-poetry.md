@@ -27,7 +27,7 @@ cd dist/lambda; zip -r ../lambda.zip . -x '*.pyc'; cd ../../
 ```
 pip install --platform manylinux2014_x86_64 --only-binary=:all: -r requirements.txt -t /build/lambda
 
-# add your pythong package/ program to /build/lambda
+# add your python package /build/lambda
 
 cd /build/lambda; zip -r /build/lambda.zip . -x '*.pyc'; cd ../../
 

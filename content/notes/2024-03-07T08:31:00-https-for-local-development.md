@@ -15,7 +15,7 @@ tags:
 - provide the key and cert file to the http server program. For example in python if using uvicorn:
 
   ```
-  uvicorn.run("arnewatcher.main:app", host="0.0.0.0", ssl_keyfile=key_path, ssl_certfile=cert_path, reload=True)
+  uvicorn.run("api.main:app", host="0.0.0.0", ssl_keyfile=key_path, ssl_certfile=cert_path, reload=True)
   ```
 ### Also read
   1. [How to Create Your Own SSL Certificate Authority for Local HTTPS Development](https://deliciousbrains.com/ssl-certificate-authority-for-local-https-development/)

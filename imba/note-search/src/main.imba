@@ -8,7 +8,8 @@ def fetchNote slug
 		return null
 
 tag note-content
-	css h2 mb:4
+	css h2 mb:4 c:$text-primary
+	css c:$text
 
 	def routed params, state
 		note = state.note ||= await fetchNote params.slug
@@ -18,6 +19,11 @@ tag note-content
 
 	<self [o@suspended:0.4]>
 		(<h2> note.title
+		<p[c:$text my:3]> note.date
+		<div.post-labels>
+			if note.tags
+				for t in note.tags
+					<p.post-label> t
 		p) if note
 			
 
@@ -41,7 +47,7 @@ tag app
 	searchQuery
 	css d:flex jc:center x:-180px
 
-	css .left d:vflex ai:left jc:start gap:2 w:296px mr:16 max-height:calc(100vh - 96px - 112px) pos:sticky top: 96px
+	css .left d:vflex ai:left jc:start gap:2 w:296px mr:16 max-height:calc(100vh - 96px - 112px) min-height:80 pos:sticky top: 96px
 	css .note-list ofy:scroll
 		overscroll-behavior: none
 
