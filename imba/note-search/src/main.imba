@@ -1,6 +1,4 @@
 import search from './assets/img/search.svg'
-import '../../../static/css/main.css'
-import '../../../static/css/blog.css'
 
 def fetchNote slug
 	let res = await window.fetch("./{slug}/index.json")
