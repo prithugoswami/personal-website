@@ -59,6 +59,16 @@ tag app
 			olc:$imba-searchbar-outline-color olw:$imba-searchbar-outline-width ols:$imba-searchbar-outline-style
 		.center h2 mb:4
 
+	def escapeRegExp(str)
+		str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+	def fuzzyMatch(query, string)
+		pattern = query.split(' ').map(do(l) "{escapeRegExp(l)}").join("|");
+		console.log(pattern)
+		const re = new RegExp(pattern, "i")
+		return re.test(string)
+
+
 	def setup
 		for c in target.children
 			if c.id == 'notes-list'
@@ -83,10 +93,11 @@ tag app
 					if !searchQuery
 						<note-item note=note>
 					else
-						<note-item note=note> if note.title.toLowerCase!.indexOf(searchQuery) >= 0
+						// <note-item note=note> if note.title.toLowerCase!.indexOf(searchQuery) >= 0
+						<note-item note=note> if fuzzyMatch(searchQuery, note.title)
 		<div.center>
 			<div route="/notes/">
-				<h2> "Notes"
+				<h2[c:$primary-text]> "Notes"
 				introBox
 			<note-content route="/notes/:slug">
 
