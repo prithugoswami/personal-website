@@ -64,7 +64,6 @@ tag app
 
 	def fuzzyMatch(query, string)
 		pattern = query.trim().split(' ').map(do(l) "{escapeRegExp(l)}").join("|");
-		console.log(pattern)
 		const re = new RegExp(pattern, "i")
 		return re.test(string)
 
