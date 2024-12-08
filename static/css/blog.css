@@ -136,6 +136,7 @@
 
 .post-text a {
     border-bottom: 2.7px solid #008aff80; 
+    overflow-wrap: break-word;
 }
 
 .post-text a code {
@@ -202,8 +203,9 @@
     padding: 0 1.2rem;
 }
 
-.post-text ul li{
-    margin: 0.4rem 0rem;
+.post-text ol{
+    list-style-position: outside;
+    padding: 0 1.2rem;
 }
 
 .post-text pre {
@@ -235,6 +237,7 @@
 }
 
 :not(pre) > code{
+    overflow-wrap: break-word;
     font-family: monospace;
     font-size: 14px;
     background-color: var(--code-bg);

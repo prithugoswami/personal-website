@@ -135,12 +135,32 @@ body{
 
 nav {
     font-family: Inter;
-    max-width: 664px;
+    max-width: 672px;
     margin: auto;
     height: 6rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+#notes-nav {
+    display: grid;
+    grid-template-columns: repeat(28, 1fr);
+    width: 1344px;
+    max-width: none;
+    grid-column: 8 / 22;
+}
+
+@media screen and (max-width: 1367px) {
+    #notes-nav {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #notes-nav {
+        width: 90%;
+    }
 }
 
 
@@ -306,7 +326,7 @@ footer p a{
 .container{
     margin: 0 auto;
     position: relative;
-    max-width: 664px;
+    max-width: 672px;
 }
 
 .sidebar-layout-container{
@@ -314,7 +334,7 @@ footer p a{
 }
 
 .sidebar-layout-main-content {
-  width: 664px;
+  width: 672px;
 }
 
 .shadow-box{

@@ -1,4 +1,5 @@
 import search from './assets/img/search.svg'
+import menu from './assets/img/menu.svg'
 
 def fetchNote slug
 	let res = await window.fetch("./{slug}/index.json")
@@ -12,12 +13,13 @@ tag note-content
 	css c:$text
 
 	def routed params, state
+		emit("noteChanged")
 		note = state.note ||= await fetchNote params.slug
 		p = document.createElement('p')
 		p.classList.add "post-text"
 		p.innerHTML = note ? note.content : ""
 
-	<self [o@suspended:0.4]>
+	<self [o@suspended:0.4 tween: all 75ms ease]>
 		(<h2> note.title
 		<p[c:$text my:3]> note.date
 		<div.post-labels>
@@ -45,13 +47,40 @@ tag app
 	notes = []
 	introBox
 	searchQuery
-	css d:flex jc:center x:-180px
+	navOpen? = false
+	css d:grid grid-template-columns: repeat(28, 1fr) m: 0px auto w: auto w:1344px
+		w@!1368: 95%
+		w@!768: 90%
 
-	css .left d:vflex ai:left jc:start gap:2 w:296px mr:16 max-height:calc(100vh - 96px - 112px) min-height:80 pos:sticky top: 96px
+	css .left	
+		o: 0.3 @hover: 1
+		d:vflex ai:left jc:start grid-column: 1 / 7 max-height:calc(100vh - 96px - 112px) min-height:80 pos:sticky top: 96px
+		gap: 2
+		tween: all 200ms ease
+		min-width: 240px
+		@!768
+			zin: 150
+			height: 100vh
+			max-height: 100vh
+			o: 1
+			x: -100vw
+			grid-row: 1 / -1
+			bgc: $bg
+			p: 5
+			w: 80vw
+			box-shadow: 0 3px 12px rgba(0,0,0,0.1)
+			
 	css .note-list ofy:scroll
 		overscroll-behavior: none
 
-	css .center w:664px
+	css .center
+		max-width: 672px
+		grid-column: 8 / 22
+		grid-column@!1368: 8 / 28
+		@!768
+			grid-column: 1 / -1
+			grid-row: 1 / -1
+
 
 	css
 		input bgc:transparent outline:none bd:none c:$text p:0 w:100% 
@@ -79,11 +108,32 @@ tag app
 					notes.push note
 			elif c.className == 'intro-text'
 				introBox = c
-
 			imba.unmount target
+		nav = document.querySelector("nav")
+		nav.id = "notes-nav"
+		const div = <div [
+			d:hflex
+			jc:space-between grid-column: 8 / 22 grid-column@!1368: 8 / 28
+			max-width: 672px
+			@!768
+				grid-column: 2 / -1
+		]>
+		const divl = <div [
+			grid-column: 1 / 7
+			min-width: 240px
+			@!768
+				d: none
+				
+		]>
+		while nav.firstChild
+			div.appendChild(nav.firstChild)
+		menuSvg = <svg src=menu width=24px [fill:$text d:none d@!768: block mr:4] @click=(navOpen? = !navOpen?)>
+		nav.appendChild divl
+		nav.appendChild menuSvg
+		nav.appendChild div
 
 	<self>
-		<div.left>
+		<div.left [x@!768:-5vw]=navOpen?>
 			<div.searchbar>
 				<svg src=search width=18px [fill:$text]>
 				<input bind=searchQuery>
@@ -94,11 +144,11 @@ tag app
 					else
 						// <note-item note=note> if note.title.toLowerCase!.indexOf(searchQuery) >= 0
 						<note-item note=note> if fuzzyMatch(searchQuery, note.title)
-		<div.center>
+		<div.center @click=(navOpen? = false) @touch=(navOpen? = false)>
 			<div route="/notes/">
 				<h2[c:$text-primary]> "Notes"
 				introBox
-			<note-content route="/notes/:slug">
+			<note-content @noteChanged=(navOpen? = false) route="/notes/:slug">
 
 
 var root = document.getElementById '_search_app_target'
