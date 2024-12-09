@@ -59,7 +59,7 @@ tag app
 		tween: all 200ms ease
 		min-width: 240px
 		@!768
-			zin: 150
+			zi: 150
 			height: 100vh
 			max-height: 100vh
 			o: 1
@@ -144,11 +144,15 @@ tag app
 					else
 						// <note-item note=note> if note.title.toLowerCase!.indexOf(searchQuery) >= 0
 						<note-item note=note> if fuzzyMatch(searchQuery, note.title)
-		<div.center @click=(navOpen? = false) @touch=(navOpen? = false)>
+		if navOpen?
+			<div [
+				w:100% h:100% zi:149 grid-column: 1 grid-row: 1 position: absolute top:0px left:0px
+			] @touch=(navOpen? &&= false) @click=(navOpen? &&= false)>
+		<div.center @click=(navOpen? &&= false)>
 			<div route="/notes/">
 				<h2[c:$text-primary]> "Notes"
 				introBox
-			<note-content @noteChanged=(navOpen? = false) route="/notes/:slug">
+			<note-content @noteChanged=(navOpen? &&= false) route="/notes/:slug">
 
 
 var root = document.getElementById '_search_app_target'
