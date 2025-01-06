@@ -15,6 +15,7 @@ markup:
 outputs:
   section:
   - json
+  - rss
   - html
   page:
   - html
